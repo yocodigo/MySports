@@ -1,7 +1,7 @@
 {
   "name": "mysports",
   "version": "1.0.0",
-  "description": "",
+  "description": "Making small change for testing purposes.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,11 +19,12 @@
   "homepage": "https://github.com/yocodigo/MySports#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
     "mysql2": "^1.5.2",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
-    "sequelize": "^4.35.1"
+    "sequelize": "^4.35.2"
   }
 }
