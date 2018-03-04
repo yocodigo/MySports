@@ -7,6 +7,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
+var passportSetup = require("./config/passport-setup.js");
 
 // Sets up the Express App
 // =============================================================
