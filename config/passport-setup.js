@@ -15,5 +15,11 @@ passport.use(
 		console.log("Passport GoogleStrategy Callback function was fired"); 
 		console.log(profile);
 
+		//Data to insert into database 
+		// new User = {
+		// 	username: profile.displayName, 
+		// 	googleID: profile.id
+		// }
+
 	})
 );
