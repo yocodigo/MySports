@@ -6,16 +6,22 @@
 	display: inline;
 }
 
-li {
-	color: white;
-	width: 10%;
-	float: left;
+.navButton{
+	margin-right: 20px;
+	text-align: center;
+	background-color: rgba(255,255,255, 0.5);
 }
 
 #title {
+	width: 100%;
 	color: white;
 }
 
 h1{
 	text-align: center;
+}
+
+.google{
+	background-color: blue;
+	color: white;
 }
