@@ -1,7 +1,7 @@
 var passport = require('passport'); 
 var GoogleStrategy = require('passport-google-oauth20');
 var keys = require('./keys.js');
-// Requiring our Todo model
+// Requiring our Fans and GoogleUser model
 var db = require("../models");
 
 passport.serializeUser(function(googleUser, done){
@@ -58,7 +58,7 @@ passport.use(
 				    		googleID: profile.id
 				    	}).then(function(newGoogleUser) {
 				     		// We have access to the new todo as an argument inside of the callback function
-				      		console.log("A new fan was created " + newGoogleUser);
+				      		console.log("A new Google User was created " + newGoogleUser);
 				      		done(null, newGoogleUser);
 			    		});
 					}

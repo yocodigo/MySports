@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var Fan = sequelize.define("Fan", {
-    googleID: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -11,16 +11,23 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    googleID: {
+    city: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    team: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    city: {
+    googleID: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
     }
   });
   return Fan;
