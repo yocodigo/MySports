@@ -1,3 +1,21 @@
 .blue{
 	background-color: blue;
 }
+
+.inline{
+	display: inline;
+}
+
+li {
+	color: white;
+	width: 10%;
+	float: left;
+}
+
+#title {
+	color: white;
+}
+
+h1{
+	text-align: center;
+}

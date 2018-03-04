@@ -1,0 +1,27 @@
+{
+  "name": "mysports",
+  "version": "1.0.0",
+  "description": "Making small change for testing purposes.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yocodigo/MySports.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yocodigo/MySports/issues"
+  },
+  "homepage": "https://github.com/yocodigo/MySports#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "mysql2": "^1.5.2",
+    "sequelize": "^4.35.1"
+  }
+}
