@@ -1,0 +1,48 @@
+<div class="container-fluid">
+	<div class="content">
+		<nav class="navbar navbar-light bg-light blue">
+			<ul class="navbar-nav inline">
+				<button class="navButton"><li><a class="navbar-brand" id="title" href="/auth/logout">Logout</a></li></button>
+				<button class="navButton"><li><a class="navbar-brand" id="title" href="/">Homepage</a></li></button>
+			</ul>
+		</nav>
+		<form id="event-form">
+  			<div class="form-group">
+  			  <label for="exampleInputEmail1">Event Title</label>
+  			  <input class="form-control" id="input_eventName" placeholder="Enter event name">
+  			</div>
+  			<div class="form-group">
+  			  <label for="exampleInputPassword1">Location</label>
+  			  <input class="form-control" id="input_eventLocation" placeholder="Location Name">
+  			</div>
+			<div class="form-group">
+  			  <label for="exampleInputPassword1">Description</label>
+  			  <input class="form-control" id="input_description" placeholder="description">
+  			</div>  
+			<div class="form-group">
+  			  <label for="exampleInputPassword1">Day and Time</label>
+  			  <input data-format="dd/MM/yyyy hh:mm:ss" class="form-control" id="input_date" placeholder="dd/MM/yyyy hh:mm:ss">
+  			</div>
+			<div class="form-group">
+  			  <label for="exampleInputPassword1">Attendees</label>
+  			  <input class="form-control" id="input_attendees" placeholder="Whos going">
+  			</div>  
+  			<button type="submit" id ="create-event" class="btn btn-primary">Submit</button>
+		</form>
+		<pre id="content"></pre>
+		<br><br>
+		<div id="eventContent"></div>
+
+			<ul>
+				{{#each newEvent}}
+					<div>
+						<span>{{title}}<span>
+						<span>{{description}}<span>
+						<span>{{date}}<span>
+						<span>{{location}}<span>
+        				<span>{{attendees}}<span>
+					</div>
+				{{/each}}
+			</ul>
+	</div>
+</div>
