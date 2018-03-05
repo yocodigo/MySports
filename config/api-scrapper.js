@@ -29,47 +29,20 @@ twitterClient.get('statuses/user_timeline', twitterParams, function(error, tweet
 });
 
 
-//var Instagram = require("instagram")
+var Instagram = require("instagram")
 
 
 {
-    //"access_token": "fb2e77d.47a0479900504cb3ab4a1f626d174d2d",
-    //"user": {
-     //   "id": "1574083",
-     //   "username": "snoopdogg",
-     //   "full_name": "Snoop Dogg",
-     //   "profile_picture": "..."
+    "access_token": "fb2e77d.47a0479900504cb3ab4a1f626d174d2d",
+    "user": {
+        "id": "1574083",
+        "username": "snoopdogg",
+        "full_name": "Snoop Dogg",
+        "profile_picture": "..."
     }
 }
 
 }
-
-//var probasketballClient = new ProBaskeball(proKeys);
-//var proParams = { }
-
-//<?php
-
-//$url = 'https://probasketballapi.com/teams';
-
-//$api_key = '__YOUR__API__KEY__';
-
-//$query_string = 'api_key='.$api_key.'&team_abbrv=BOS';
-
-//$ch = curl_init();
-
-//curl_setopt($ch, CURLOPT_URL, $url);
-///curl_setopt($ch, CURLOPT_POSTFIELDS, $query_string);
-//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-
-//$result = curl_exec($ch);
-
-//curl_close($ch);
-
-//echo $result;it 
-
-//?>
-
 
 
 

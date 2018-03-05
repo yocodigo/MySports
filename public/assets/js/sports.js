@@ -28,5 +28,13 @@ $(function() {
         // After Creating the new User take them back to the login screen
         window.location.href = "/auth/login";
     });
+
+      $.ajax({
+    url: "https://probasketballapi.com/teams&api_key=aUzFocEQCWLJBZ4N9RD5VqM31X8fbrlO&team_name=warriors",
+    method: "GET"
+  }).then(function(teams){
+    console.log(teams)
+  })
+
   });
 });
