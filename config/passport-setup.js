@@ -18,15 +18,11 @@ passport.deserializeUser(function(id, done){
 passport.use(
 	new GoogleStrategy(
 	{
-		//options for the google strategy;
 		callbackURL: '/auth/google/redirect',
 		clientID: keys.google.clientID,
 		clientSecret: keys.google.clientSecret
 	},
 	function(accessToken, refreshToken, profile, done){
-		//passport callback function
-		//console.log("Passport GoogleStrategy Callback function was fired"); 
-		//console.log(profile);
 		db.Fan.findOne({
 			where: {
 				googleID: profile.id
@@ -40,7 +36,6 @@ passport.use(
 						googleID: profile.id
 					}
 				}).then(function(currentGoogleUserAndFan){
-					console.log("The current Google User is " + currentGoogleUserAndFan);
 					done(null, currentGoogleUserAndFan);
 				})
 			}else{
@@ -58,7 +53,6 @@ passport.use(
 				    		googleID: profile.id
 				    	}).then(function(newGoogleUser) {
 				     		// We have access to the new todo as an argument inside of the callback function
-				      		console.log("A new Google User was created " + newGoogleUser);
 				      		done(null, newGoogleUser);
 			    		});
 					}

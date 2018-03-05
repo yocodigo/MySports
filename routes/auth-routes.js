@@ -5,11 +5,12 @@ var db = require("../models");
 
 //auth login
 router.get('/login', function(req, res){
-	res.render('login');
+	res.render('login', {user: req.user});
 });
 
 router.get('/logout', function(req, res){
-	res.send('logging out');
+	req.logout();
+	res.redirect('/');
 });
 
 //auth with google and passport
@@ -25,9 +26,5 @@ router.get('/google/redirect', passport.authenticate('google'), function(req, re
 router.get('/signup', function(req,res){
 	res.render('SignUpPage', req.user);
 }); 
-
-/*router.post('/signup', function(req,res){
-
-});*/
 
 module.exports = router; 
