@@ -25,33 +25,8 @@ $(function() {
       data: newFan
     }).then(function(data) {
         console.log("created new Fan");
-        // Reload the page to get the updated list
+        // After Creating the new User take them back to the login screen
         window.location.href = "/auth/login";
-        //location.reload();
     });
   });
 });
-
-  // $("#make-it").on("click", function(event) {
-  //   // Make sure to preventDefault on a submit event.
-  //   event.preventDefault();
-  //   console.log("Inside make it function");
-  //   console.log($("#burgerInput").val().trim());
-
-  //   var newBurger = {
-  //     burger_name: $("#burgerInput").val().trim(),
-  //     devoured: 0
-  //   };
-
-  //   // Send the POST request.
-  //   $.ajax("/api/burgers", {
-  //     type: "POST",
-  //     data: newBurger
-  //   }).then(
-  //     function() {
-  //       console.log("created new Burger");
-  //       // Reload the page to get the updated list
-  //       location.reload();
-  //     }
-  //   );
-  // });

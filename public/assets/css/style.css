@@ -17,6 +17,12 @@
 	color: white;
 }
 
+#GoogleButton{
+	background-color: blue;
+	color: white;
+	margin-left: 45%;
+}
+
 h1{
 	text-align: center;
 }
