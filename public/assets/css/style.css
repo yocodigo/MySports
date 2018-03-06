@@ -34,5 +34,17 @@ h1{
 
 #map {
     height: 400px;
-    width: 500px;
+	width: 400px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.col-md-3 {
+	/* delete borders if no longer necessary */
+	border-color: red;
+	border-style: solid; 
+} 
+
+#venues, #placeholder {
+	margin: 150px 50px 50px 100px;
 }
