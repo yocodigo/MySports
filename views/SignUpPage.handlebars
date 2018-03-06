@@ -6,15 +6,48 @@
     </div>
     <div class="form-group">
       <label for="fan-email">Email address</label>
-      <input type="email" class="form-control" id="fan-email" placeholder="Enter email">
+      <input type="email" class="form-control" id="fan-email" placeholder="name@email.com">
     </div>
     <div class="form-group">
-      <label for="fan-city">City</label>
-      <input type="text" class="form-control" id="fan-city" placeholder="Password">
+      <label for="fan-city">Your City</label>
+      <input type="text" class="form-control" id="fan-city" placeholder="Your City">
     </div>
     <div class="form-group">
       <label for="fan-team">Select Favorite Team</label>
-      <input type="text" class="form-control" id="fan-team" placeholder="Team">
+       <input type="text" class="form-control" id="fan-team" list="hosting-plan" placeholder="Choose Your Favorite Team">
+      <datalist id="hosting-plan">
+        <option value="Atlanta Hawks"></option>
+        <option value="Boston Celtics"></option>
+        <option value="Brooklyn Nets"></option>
+        <option value="Charlotte Hornets"></option>
+        <option value="Chicago Bulls"></option>
+        <option value="Cleveland Cavaliers"></option>
+        <option value="Dallas Mavericks"></option>
+        <option value="Denver Nuggets"></option>
+        <option value="Detroit Pistons"></option>
+        <option value="Golden State Warriors"></option>
+        <option value="Houston Rockets"></option>
+        <option value="Indian Pacers"></option>
+        <option value="Los Angeles Clippers"></option>
+        <option value="Los Angeles Lakes"></option>
+        <option value="Memphis Grizzlies"></option>
+        <option value="Miami Heat"></option>
+        <option value="Milwaukee Bucks"></option>
+        <option value="Minnesota Timberwolves"></option>
+        <option value="New Orleans Pelicans"></option>
+        <option value="New York Knicks"></option>
+        <option value="Olkalhoma City Thunder"></option>
+        <option value="Orlando Magic"></option>
+        <option value="Philadelphia 76ers"></option>
+        <option value="Phoenix Suns"></option>
+        <option value="Portland Trailblazers"></option>
+        <option value="Sacremento Kings"></option>
+        <option value="San Antonio Spurs"></option>
+        <option value="Toronto Raptors"></option>
+        <option value="Utah Jazz"></option>
+        <option value="Washington Wizards"></option>
+      
+      </datalist>
     </div>
     <p id="googleID" data-googleID="{{dataValues.googleID}}"></p>
     <button type="submit" class="btn btn-primary" id="sign-up-button">Submit</button>
