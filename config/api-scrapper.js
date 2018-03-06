@@ -17,14 +17,10 @@ twitterClient.get('statuses/user_timeline', twitterParams, function(error, tweet
     }else {
       var data = "";
       tweets.forEach(function(tweet){
-        data += ""  
-        +"====================================================="
-        + "\nTweeted at - " + tweet.created_at
-        + "\nTweet Text - " + tweet.text
-        + "\n=====================================================\n";
+        
       });
       console.log(data);
-      
+     // we gotta go profile page and put outcome into front page
     }
 });
 
