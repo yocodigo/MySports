@@ -31,7 +31,7 @@ twitterClient.get('statuses/user_timeline', twitterParams, function(error, tweet
 
 var Instagram = require("instagram")
 
-
+var instagramKeys
 {
     "access_token": "fb2e77d.47a0479900504cb3ab4a1f626d174d2d",
     "user": {
@@ -44,6 +44,27 @@ var Instagram = require("instagram")
 
 }
 
+
+var instagramKeys = function(){
+
+  var Client = new Stubhub (stubhubKeys)
+  var instagramParams = ( user_name: "" , events: 10)
+};
+
+instagramKeys.get( 'user.event', instagramParams, error response ) 
+if error{
+  console.log(error);
+};
+else { var data: "";
+ data += ""  
+        +"====================================================="
+        + "\nEvent at - " + event.created_at
+        + "\nEvent Text - " + event.text
+        + "\n=====================================================\n";
+      });
+      console.log(data);
+      
+    
 
 
 
@@ -62,7 +83,7 @@ var stubhubKeys = function(){
   var stubhubParams = ( user_name: "" , events: 10)
 };
 
-stubhubKeys.get( 'user.event', stubhubParams, error, response ) 
+stubhubKeys.get( 'user.event', stubhubParams, error response ) 
 if error{
   console.log(error);
 };
