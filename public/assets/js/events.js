@@ -2,9 +2,6 @@
 $("#create-event").on("click", function(event) {
     event.preventDefault();
 
-    var picker = new Pikaday({ field: $('#datepicker')[0] });
-
-
     var eventTitle = $("#input_eventName").val().trim();
     var eventLocation = $("#input_eventLocation").val().trim();
     var eventDescription = $("#input_description").val().trim();
