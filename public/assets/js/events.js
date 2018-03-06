@@ -27,18 +27,22 @@ var newEvent = {
       console.log("created new event");
       console.log(newEvent);
   });
+
+  $.ajax({
+    url: "/fan/all",
+    type: "GET"
+    }).then(function(res){
+      console.log(res)
+      var opts = '';
+      $.each(res, function(i){
+          opts += '<option>' + this + '</option>';
+      });
+      $('.option-menu').html(opts);
+    });
 });
 
 
 
 // Get all fans from DB
-$.ajax("api/new", {
-  type: "GET"
-  }).then(function(res){
-    // var opts = '';
-    // $.each(res, function(i){
-    //     opts += '<option>' + this + '</option>';
-    // });
-    // $('.option-menu').html(opts);
-  });
+
 

@@ -1,40 +1,146 @@
-<div class="container-fluid">
-	<div class="content">
-		<nav class="navbar navbar-light bg-light blue">
-			<ul class="navbar-nav inline">
-				{{#unless user}}
-				<button class="navButton"><li><a class="navbar-brand" id="title" href="/auth/google">Login Google+</a></li></button>
-				{{/unless}}
-				{{#if user}}
-				<button class="navButton"><li><a class="navbar-brand" id="title" href="/auth/logout">Logout</a></li></button>
-				{{/if}}
-				<button class="navButton"><li><a class="navbar-brand" id="title" href="/">Homepage</a></li></button>
-				<button class="navButton"><li><a class="navbar-brand" id="title" href="/profile">ProfilePage</a></li></button>
-				<button class="navButton"><li><a class="navbar-brand" id="title" href="/events">api/events</a></li></button>
+<nav class="navbar">
+	<ul class="nav">
+		{{#unless user}}
+		<li class="nav-item">
+			<a class="nav-link" id="title" href="/auth/google">Login Google+</a>
+		</li>
+		{{/unless}}
+		{{#if user}}
+		<li class="nav-item">
+			<a class="nav-link" id="title" href="/auth/logout">Logout</a>
+		</li>
+		{{/if}}
+		<li class="nav-item">
+			<a class="nav-link" id="title" href="/">Homepage</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" id="title" href="/profile">ProfilePage</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" id="title" href="/events">Events</a>
+		</li>
+	</ul>
+</nav>
 
-			</ul>
-		</nav>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="event-form">
+  			<div class="form-group">
+  			  <label for="exampleInputEmail1">Event Title</label>
+  			  <input class="form-control" id="input_eventName" placeholder="Enter event name">
+  			</div>
+  			<div class="form-group">
+  			  <label for="exampleInputPassword1">Location</label>
+  			  <input class="form-control" id="input_eventLocation" placeholder="Location Name">
+  			</div>
+			<div class="form-group">
+  			  <label for="exampleInputPassword1">Description</label>
+  			  <input class="form-control" id="input_description" placeholder="description">
+  			</div>  
+			<div class="form-group">
+  			  <label for="exampleInputPassword1">Day and Time</label>
+				<div class="row">
+				<div class="col">
+					<input data-format="dd/MM/yyyy" class="form-control" id="input_date" placeholder="dd/MM/yyyy">
+				</div>
+				<div class="col">
+					<input data-format="hh:mm:ss" class="form-control" id="input_time" placeholder="hh:mm:ss">
+				</div>
+				</div>
+  			</div>
+			<div class="form-group">
+  			  <label for="exampleInputPassword1">Attendees</label>
+			  <select class="custom-select option-menu" id="input_attendees">
+			    <option selected>Open this select menu</option>
+			  </select>
+  			</div>  
+  			
+			<div class="modal-footer">
+        		<button type="submit" id ="create-event" class="btn btn-primary">Submit</button>
+      		</div>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="teamSchedule">
+				<div class="row">
+					<div class="teamRecord col-3" >
+						Team Record
+					</div>
+					<div class="upcomingGames col9">
+						<div class="newEvent">
+							<!-- Button trigger modal -->
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+							  <span class="calendar-icon"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+<div class="container-fluid">
+	<div class="row">
+		<main class="col">
+			<div class="row">
+				<div class="col-md-6">
+					<h4>Where To Watch The Game</h4>
+					<div id="map"></div>
+				</div>
+				<div class="col-md-3" id="venues-container">
+					<div id="venues">
+						{{!-- (Venue listings go here) --}}
+					</div>
+				</div>
+			</div>
+		</main>
+		<div class="col-md-2 d-none d-md-block bg-light sidebar">
+			<h4>Messages</h4>
+			<p class="message">I'm going to watch the game bro.</p>
+			<p class="message">Me too!.</p>
+			<form id="message">
+				<label>Enter Message</label>
+				<input type="text" id="input_message">
+				<button type="submit" class="btn btn-primary" id="submit-message">Submit</button>
+			</form>
+		</div>
 		<br><br>
-		<h1>Welcome To Your Home Page</h1>
 		{{!-- Sport Bar Locations --}}
-		<div class="row">
-			<div class="col-md-3">
-				<div id="placeholder">
-					(Add content here?)
-				</div>
+	</div>
+	<h5>Team News</h5>
+	<div class="row">
+		<div class="col-3">
+			<div class="card module">
+			  <div class="card-body">
+			    <h5 class="card-title">Twitter</h5>
+			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			  </div>
 			</div>
-			<div class="col-md-3">
-				<div id="map"></div>
+		</div>
+		<div class="col-3">
+			<div class="card module">
+			  <div class="card-body">
+			    <h5 class="card-title">Instagram</h5>
+			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			  </div>
 			</div>
-			<div class="col-md-3" id="venues-container">
-				<div id="venues">
-					(Venue listings go here)
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div id="placeholder">
-					(Add content here?)
-				</div>
+		</div>
+		<div class="col-3">
+			<div class="card module">
+			  <div class="card-body">
+			    <h5 class="card-title">NBA News</h5>
+			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			  </div>
 			</div>
 		</div>
 	</div>
