@@ -1,4 +1,3 @@
-USE mysports_db;
 INSERT INTO fan (name, email, city) VALUES ("Jason Kunkel", "jasonakunkel@outlook.com", "Chicago Bulls");
 INSERT INTO fan (name, email, city) VALUES ("Andy Smith", "ajsmith@smith.com", "Dallas Mavericks");
 INSERT INTO fan (name, email, city) VALUES ("Bob Steller", "bob@bob.com", "Cleveland Caveliers");
