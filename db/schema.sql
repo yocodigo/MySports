@@ -1,5 +1,5 @@
 
--- DROP DATABASE IF EXISTS sportsfan_db;
+-- DROP DATABASE IF EXISTS mysports_db;
 CREATE DATABASE mysports_db;
 USE mysports_db;
 

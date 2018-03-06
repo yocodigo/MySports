@@ -29,4 +29,18 @@ $(function() {
         window.location.href = "/auth/login";
     });
   });
+  $.ajax({
+      url: "https://2/?t=romancing+the+stone&y=&plot=short&apikey=40e9cece",
+      method: "GET"
+    }).done(function(response) {
+      console.log(response);
+    });
+    $.ajax({
+      url: "https://api.probasketballapi.com/warriors'/aUzFocEQCWLJBZ4N9RD5VqM31X8fbrlO",
+      method: "GET"
+    }).done(function(response) {
+      console.log(response);
+    });
+
+
 });
