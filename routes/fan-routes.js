@@ -18,7 +18,7 @@ router.post("/new", function(req, res) {
 });  
 
 // Get All Usernames For Event Form ===================
-router.get("/new", function(req, res) {
+router.get("/all", function(req, res) {
   db.Fan.findAll({}).then(function(res){   
     var opts = '';
     for(i=0; i<res.length; i++){

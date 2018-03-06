@@ -46,12 +46,6 @@ app.set("view engine", "handlebars");
 // =============================================================
 require("./routes/handlebar-routes.js")(app); 
 
-//Events
-var eventRoutes = require('./routes/event-routes')
-app.use("/events", eventRoutes)
-
-
-
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({}).then(function() {

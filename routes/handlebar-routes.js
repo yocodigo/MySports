@@ -1,6 +1,7 @@
 var authRoutes = require('./auth-routes.js');
 var profileRoutes = require('./profile-routes.js');
-var apiRoutes = require('./api-routes.js');
+var fanRoutes = require('./fan-routes.js');
+var eventRoutes = require('./event-routes.js');
 
 module.exports = function(app) {
 
@@ -10,5 +11,6 @@ module.exports = function(app) {
 	//All the other routes /auth, /profile, and /api
 	app.use('/auth', authRoutes);
 	app.use('/profile', profileRoutes);
-	app.use('/api', apiRoutes);
+	app.use('/fan', fanRoutes);
+	app.use('/events', eventRoutes);
 };
