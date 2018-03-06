@@ -3,7 +3,7 @@ var GoogleStrategy = require('passport-google-oauth20');
 var keys = require('./keys.js');
 // Requiring our Fans and GoogleUser model
 var db = require("../models");
-// console.log()
+
 passport.serializeUser(function(googleUser, done){
 	done(null, googleUser.id);
 });
