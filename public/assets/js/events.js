@@ -1,7 +1,3 @@
-// Google Calendar API 
-
-
-
 // Get info from the form
 $("#create-event").on("click", function(event) {
     event.preventDefault();
@@ -10,13 +6,15 @@ $("#create-event").on("click", function(event) {
     var eventLocation = $("#input_eventLocation").val().trim();
     var eventDescription = $("#input_description").val().trim();
     var eventDate = $("#input_date").val().trim();
+    var eventTime = $("#input_time").val().trim();
+    var eventDateTime = eventDate + ' ' + eventTime; 
     var eventAttendees = $("#input_attendees").val().trim();
 
 var newEvent = {
     title: eventTitle,
     location: eventLocation,
     description: eventDescription,
-    date: eventDate,
+    date: eventDateTime,
     attendess: eventAttendees
 }
 
@@ -28,12 +26,19 @@ var newEvent = {
   }).then(function(data) {
       console.log("created new event");
       console.log(newEvent);
-
-    // $('#eventContent').append(newEvent.title);
-    // $('#eventContent').append(newEvent.location);
-    // $('#eventContent').append(newEvent.description);
-    // $('#eventContent').append(newEvent.date);
-    // $('#eventContent').append(newEvent.attendess);
-
   });
 });
+
+
+
+// Get all fans from DB
+$.ajax("api/new", {
+  type: "GET"
+  }).then(function(res){
+    // var opts = '';
+    // $.each(res, function(i){
+    //     opts += '<option>' + this + '</option>';
+    // });
+    // $('.option-menu').html(opts);
+  });
+
