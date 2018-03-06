@@ -31,3 +31,30 @@ h1{
 	background-color: blue;
 	color: white;
 }
+
+
+
+/*  Events ==============  */
+.event{
+	margin-bottom:20px;
+	padding:10px;	
+
+  
+/* Map ==================  */ 
+#map {
+  height: 400px;
+	width: 400px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.col-md-3 {
+	/* delete borders if no longer necessary */
+	border-color: red;
+	border-style: solid; 
+} 
+
+#venues, #placeholder {
+	margin: 150px 50px 50px 100px;
+
+}

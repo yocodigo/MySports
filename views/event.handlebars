@@ -1,0 +1,61 @@
+<div class="container-fluid">
+	<div class="content">
+		<nav class="navbar navbar-light bg-light blue">
+			<ul class="navbar-nav inline">
+				<button class="navButton"><li><a class="navbar-brand" id="title" href="/auth/logout">Logout</a></li></button>
+				<button class="navButton"><li><a class="navbar-brand" id="title" href="/">Homepage</a></li></button>
+			</ul>
+		</nav>
+		<form id="event-form">
+  			<div class="form-group">
+  			  <label for="exampleInputEmail1">Event Title</label>
+  			  <input class="form-control" id="input_eventName" placeholder="Enter event name">
+  			</div>
+  			<div class="form-group">
+  			  <label for="exampleInputPassword1">Location</label>
+  			  <input class="form-control" id="input_eventLocation" placeholder="Location Name">
+  			</div>
+			<div class="form-group">
+  			  <label for="exampleInputPassword1">Description</label>
+  			  <input class="form-control" id="input_description" placeholder="description">
+  			</div>  
+			<div class="form-group">
+  			  <label for="exampleInputPassword1">Day and Time</label>
+				<div class="row">
+				<div class="col">
+					<input data-format="dd/MM/yyyy" class="form-control" id="input_date" placeholder="dd/MM/yyyy">
+				</div>
+				<div class="col">
+					<input data-format="hh:mm:ss" class="form-control" id="input_time" placeholder="hh:mm:ss">
+				</div>
+				</div>
+  			</div>
+			<div class="form-group">
+  			  <label for="exampleInputPassword1">Attendees</label>
+			  <select class="custom-select option-menu" id="input_attendees">
+			    <option selected>Open this select menu</option>
+			  </select>
+  			</div>  
+  			<button type="submit" id ="create-event" class="btn btn-primary">Submit</button>
+		</form>
+		<pre id="content"></pre>
+		<br><br>
+		<div id="eventContent"></div>
+		<div class="row">
+			{{#each newEvent}}
+				<div class="col-3">			
+					<div class="card event">
+  						<div class="card-body">
+  						  <h5 class="card-title">Event: {{title}}</h5>
+  						  <p class="card-text">{{description}}</p>
+						  <p>When: {{date}}</p>
+						  <p>Where: {{location}}</p>
+						  <p><span>Who's Going: {{attendees}}</span></p>
+  						  <a href="#" class="btn btn-primary">I'm Going</a>
+  						</div>
+					</div>	
+				</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
