@@ -17,87 +17,46 @@ twitterClient.get('statuses/user_timeline', twitterParams, function(error, tweet
     }else {
       var data = "";
       tweets.forEach(function(tweet){
-        data += ""  
-        +"====================================================="
-        + "\nTweeted at - " + tweet.created_at
-        + "\nTweet Text - " + tweet.text
-        + "\n=====================================================\n";
+        
       });
       console.log(data);
-      
+     // we gotta go profile page and put outcome into front page
     }
 });
 
+var instagram = require('instagram').createClient('af8f6cb5d8f0480d80c9b03e10e3cf92', '14c737de62324f37b06a9c22935bafd1');
 
-var Instagram = require("instagram")
+instagram.tags.search('nba', function (tags, error) { console.log(tags)});
 
-var instagramKeys
-{
-    "access_token": "fb2e77d.47a0479900504cb3ab4a1f626d174d2d",
-    "user": {
-        "id": "1574083",
-        "username": "snoopdogg",
-        "full_name": "Snoop Dogg",
-        "profile_picture": "..."
-    }
-}
 
-}
 
-var instagramKeys = function(){
+// var ig = require('instagram-node').instagram();
+ 
+// // Every call to `ig.use()` overrides the `client_id/client_secret` 
+// // or `access_token` previously entered if they exist. 
+// ig.use({ access_token: 'YOUR_ACCESS_TOKEN' });
+// ig.use({ client_id: 'af8f6cb5d8f0480d80c9b03e10e3cf92',
+//          client_secret: '14c737de62324f37b06a9c22935bafd1' });
 
-  var Client = new Stubhub (stubhubKeys)
-  var instagramParams = ( user_name: "" , events: 10)
-};
-
-instagramKeys.get( 'user.event', instagramParams, error response ) 
-if error{
-  console.log(error);
-};
-else { var data: "";
- data += ""  
-        +"====================================================="
-        + "\nEvent at - " + event.created_at
-        + "\nEvent Text - " + event.text
-        + "\n=====================================================\n";
-      });
-      console.log(data);
+// app.post('/like/:media_id', function(req, res, next) {
+//   var ig = require('instagram-node').instagram({});
+//   ig.use({ access_token: 'YOUR_ACCESS_TOKEN' });
+ 
+//   ig.add_like(req.param('media_id'), {
+//     sign_request: {
+//       client_secret: '14c737de62324f37b06a9c22935bafd1',
+//       // Then you can specify the request: 
+//       client_req: req
+//       // or the IP on your own: 
+//       ip: 'XXX.XXX.XXX.XXX'
+//     }
+//   }, function(err) {
+//     // handle err here 
+//     return res.send('OK');
+//   });
+// });
       
     
 
-
-
-
-
-
-var Stubhub = require("stubhub");
-
-var stubhubKeys {
-
-Application Token: '64a2a266-6c7a-3092-ab63-08453aa9fa6b',
-Consumer Key: '1sofM52NIkKWQNxYLeneFoezTaYa',
-Consumer Secret: 'DOWD8VCBXJNMfPf5NpUrNMbXcKka'
-}
-
-var stubhubKeys = function(){
-
-  var Client = new Stubhub (stubhubKeys)
-  var stubhubParams = ( user_name: "" , events: 10)
-};
-
-stubhubKeys.get( 'user.event', stubhubParams, error response ) 
-if error{
-  console.log(error);
-};
-else { var data: "";
- data += ""  
-        +"====================================================="
-        + "\nEvent at - " + event.created_at
-        + "\nEvent Text - " + event.text
-        + "\n=====================================================\n";
-      });
-      console.log(data);
-      
-    
 
 
