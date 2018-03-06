@@ -15,6 +15,6 @@ router.post("/new", function(req, res) {
     return res.redirect('/auth/login');
   });
   
-});  
+}); 
 
 module.exports = router; 
