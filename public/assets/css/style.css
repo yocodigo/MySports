@@ -32,8 +32,17 @@ h1{
 	color: white;
 }
 
+
+
+/*  Events ==============  */
+.event{
+	margin-bottom:20px;
+	padding:10px;	
+
+  
+/* Map ==================  */ 
 #map {
-    height: 400px;
+  height: 400px;
 	width: 400px;
 	margin: auto;
 	margin-top: 20px;
@@ -47,4 +56,5 @@ h1{
 
 #venues, #placeholder {
 	margin: 150px 50px 50px 100px;
+
 }
