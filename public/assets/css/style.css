@@ -38,12 +38,14 @@ h1{
 .event{
 	margin-bottom:20px;
 	padding:10px;	
+}
 
   
 /* Map ==================  */ 
+
 #map {
-  height: 400px;
-	width: 400px;
+    height: 400px;
+    width: 400px;
 	margin: auto;
 	margin-top: 20px;
 }
