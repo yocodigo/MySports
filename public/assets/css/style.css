@@ -69,7 +69,7 @@ h1{
 }
 
 .calendar-icon{
-	background-image: url('/public/assets/images/calendar-plus.svg');
+	/* background-image: url('/public/assets/images/calendar-plus.svg'); */
 }
 
 /* Twitter Messages =====================  */
