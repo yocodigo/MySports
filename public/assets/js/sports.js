@@ -24,11 +24,24 @@ $(function() {
       type: "POST",
       data: newFan
     }).then(function(data) {
-        console.log("created new Fan");
+        // console.log("created new Fan");
         // After Creating the new User take them back to the login screen
         window.location.href = "/auth/login";
-    })
+    });
 
+});
 
- });
+    
+        
+        $.ajax('/fan/colors',{
+            method: 'GET'
+        
+        }).done(function(team){
+       
+            $('.teamBanner').css('background-color', team.color1);
+            $('.teamBanner').css('border-bottom', '20px solid ' + team.color2);
+            var logoImg = $('<img>').attr('src', team.logo);
+            $('.teamBanner').append(logoImg)
+              });
+    
 });
