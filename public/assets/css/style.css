@@ -1,15 +1,12 @@
-.blue{
-	background-color: blue;
+.navbar{
+	background-color: #333
 }
-
 .inline{
 	display: inline;
 }
 
 .navButton{
-	margin-right: 20px;
-	text-align: center;
-	background-color: rgba(255,255,255, 0.5);
+	color:#fff
 }
 
 #title {
@@ -35,26 +32,36 @@ h1{
 
 
 /*  Events ==============  */
-.event{
+.event, .module{
 	margin-bottom:20px;
 	padding:10px;	
 }
 
 /* Map ==================  */ 
-#map {
-  height: 400px;
-	width: 400px;
-	margin: auto;
-	margin-top: 20px;
-}
 
-.col-md-3 {
-	/* delete borders if no longer necessary */
-	border-color: red;
-	border-style: solid; 
-} 
+#map {
+    height: 200px;
+    width: 400px;
+	margin: auto;
+}
 
 #venues, #placeholder {
 	margin: 150px 50px 50px 100px;
 
+}
+
+/*  Team Schedule =======================  */
+.teamSchedule{
+	height:80px;
+	background-color: #eee
+}
+
+.message{
+	font-size:13px;
+	padding:5px;
+	background-color: #eee
+}
+
+.calendar-icon{
+	background-image: url('/public/assets/images/calendar-plus.svg');
 }

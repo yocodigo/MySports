@@ -19,14 +19,16 @@ $(function() {
         googleID: fanGoogleID
     }
 
-     // Send the POST request.
-    $.ajax("/api/new", {
+     //Send the POST request.
+    $.ajax("/fan/new", {
       type: "POST",
       data: newFan
     }).then(function(data) {
         console.log("created new Fan");
         // After Creating the new User take them back to the login screen
         window.location.href = "/auth/login";
-    });
-  });
+    })
+
+
+ });
 });
