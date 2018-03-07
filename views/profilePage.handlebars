@@ -10,7 +10,32 @@
 		<br><br>
 		<h1>This is the Profile Page For: <span>{{name}}<span></h1>
 		<h1>Your Email Is: <span>{{email}}<span></h1>
-		<h1>You Live In: <span>{{city}}<span></h1>
+		<h1>You Live In: <span id="city" data-city="{{city}}">{{city}}<span></h1>
 		<h1>Your Favorite Team Is: <span>{{team}}<span></h1>
+
+		{{!-- Sport Bar Locations --}}
+		<div class="row">
+			<div class="col-3">
+				<div id="placeholder">
+					
+				</div>
+			</div>
+			<div class="col-4">
+				<div id="map"></div>
+			</div>
+				<div class="col-3" id="venues-container">
+					<div class="card module" id="card-venues">
+						<div class="card-body">
+							<div id="venues"></div>
+						</div>
+					</div>
+				</div>		
+			<div class="col-2">
+				<div id="placeholder">
+					
+				</div>
+			</div>
+		</div>
+
 	</div>
 </div>

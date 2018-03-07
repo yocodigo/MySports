@@ -5,9 +5,24 @@ var request;
 var service;
 var markers = [];
 
-function initialize() {
-  var center = new google.maps.LatLng(37.8720397, -122.2734467);
-  
+
+function GetLatlong(){
+  var geocoder = new google.maps.Geocoder();
+  var address = $('#city').data('city');
+
+  geocoder.geocode({ 'address': address }, function (results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        var latitude = results[0].geometry.location.lat();
+        var longitude = results[0].geometry.location.lng();
+        var coordinates = {lat: latitude, long: longitude}
+        initialize(latitude, longitude);
+        // return coordinates;     
+      }
+  });
+ }
+
+function initialize(lat, long) {
+  var center = new google.maps.LatLng(lat, long);
   map = new google.maps.Map(document.getElementById('map'), {
     center: center,
     zoom: 12
@@ -23,7 +38,7 @@ function initialize() {
   service = new google.maps.places.PlacesService(map);
 
   service.nearbySearch(request, callback);
-
+  
   google.maps.event.addListener(map, 'rightclick', function(event) {
     map.setCenter(event.latLng)
     clearResults(markers)
@@ -34,14 +49,22 @@ function initialize() {
       keyword: "sports bar"
     };
     service.nearbySearch(request, callback);
+      
   })
 }
 
 function callback(results, status) {
   if(status == google.maps.places.PlacesServiceStatus.OK){
+    var venues = "";
     for (var i = 0; i < results.length; i++) {
       markers.push(createMarker(results[i]));
+      venues = i + 1 + ". " + results[i].name;
+      vicinity = results[i].vicinity;
+      rating = results[i].rating;
+      $('#venues').append(venues + "<br>" + "Address: " + vicinity + "<br>" + "Rating: " + rating + "<br>" + "<br>");
     }
+    console.log(results);
+    console.log(results[0].opening_hours);
   }
 }
 
@@ -49,7 +72,7 @@ function createMarker(place) {
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
     map: map,
-    position: place.geometry.location
+    position: place.geometry.location,
   });
   
   google.maps.event.addListener(marker, 'click', function() {
@@ -68,4 +91,4 @@ function clearResults(markers) {
   markers = []
 }
 
-google.maps.event.addDomListener(window, "load", initialize);
+google.maps.event.addDomListener(window, "load", GetLatlong);
