@@ -11,7 +11,7 @@ router.post("/", function(req, res) {
       user: newMessage.message
     }).then(function(message){
       //console.log("A new message was created " + newMessage.message);
-      res.render('index', message);
+      res.render('index', newMessage);
     });
   });
   
@@ -20,9 +20,9 @@ router.post("/", function(req, res) {
     db.Message.findAll({}).then(function(event){
 
      var newMessage = {
-        newMessage: message
+        text: message
     };
-     res.render('index', newMessages)
+     res.render('index', newMessage)
       })
     });
      module.exports = router; 

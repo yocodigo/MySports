@@ -24,25 +24,36 @@ var newEvent = {
     type: "POST",
     data: newEvent
   }).then(function(data) {
-      console.log("created new event");
-      console.log(newEvent);
+      // console.log("created new event");
+      // console.log(newEvent);
+      location.reload();
   });
 
-  $.ajax({
-    url: "/fan/all",
-    type: "GET"
-    }).then(function(res){
-      console.log(res)
-      var opts = '';
-      $.each(res, function(i){
-          opts += '<option>' + this + '</option>';
-      });
-      $('.option-menu').html(opts);
-    });
+  // Get all fans
+  // $.ajax({
+  //   url: "/fan/all",
+  //   type: "GET"
+  //   }).then(function(res){
+  //     var opts = '';
+  //     $.each(res, function(i){
+  //         opts += '<option>' + this + '</option>';
+  //     });
+  //     $('.option-menu').html(opts);
+
+  //     location.reload();
+  //   });
 });
 
 
+$(document).ready(function(res) {
+  $('.js-data-example-ajax').select2({
+    ajax: {
+      type: 'GET',
+      url: '/fan/all',
+      dataType: 'json'
+      // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+    }
+  })
 
-// Get all fans from DB
-
+});
 

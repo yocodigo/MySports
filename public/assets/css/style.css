@@ -35,9 +35,14 @@ h1{
 .event, .module{
 	margin-bottom:20px;
 	padding:10px;	
+	
 }
 
-  
+.module{
+	height: 300px;
+    overflow: scroll;
+}
+
 /* Map ==================  */ 
 
 #map {
@@ -65,4 +70,11 @@ h1{
 
 .calendar-icon{
 	background-image: url('/public/assets/images/calendar-plus.svg');
+}
+
+/* Twitter Messages =====================  */
+
+#twitterMessages p{
+	font-size:13px;
+
 }
