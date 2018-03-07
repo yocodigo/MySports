@@ -1,3 +1,4 @@
+$(document).ready(function(){
 // Get info from the form
 $("#create-event").on("click", function(event) {
     event.preventDefault();
@@ -45,14 +46,24 @@ var newEvent = {
 });
 
 
-$(document).ready(function(res) {
-  $('.js-data-example-ajax').select2({
+
+  $('#input_attendees').select2({
+    placeholder: 'Pick Attendees',
     ajax: {
-      type: 'GET',
       url: '/fan/all',
-      dataType: 'json'
-      // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+      datatype: 'json',
+      results: function(params){
+        return {results: params}
+      }
     }
+    
+    // ajax: {
+    //   type: 'GET',
+    //   url: '/fan/all',
+    //   dataType: 'json'
+    //   // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+      
+    // }
   })
 
 });
