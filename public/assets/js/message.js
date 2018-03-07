@@ -2,8 +2,7 @@ $("#submit-message").on("click", function(event) {
     event.preventDefault();
 
     var messageText = $("#input_message").val().trim();
-
-
+    
     var newMessage = {
         message: messageText,
         user: 'user'
@@ -14,6 +13,7 @@ $("#submit-message").on("click", function(event) {
        type: "POST",
        data: newMessage
      }).then(function(newMessage) {
+        location.reload();
      });
 
      $("#input_message").html('');

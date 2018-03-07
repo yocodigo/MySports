@@ -59,7 +59,7 @@
   			</div>
 			<div class="form-group">
   			  <label for="exampleInputPassword1">Attendees</label>
-			  <select class="custom-select option-menu" id="input_attendees">
+			  <select class="js-example-basic-single" multiple="multiple" id="input_attendees">
 			    <option selected>Open this select menu</option>
 			  </select>
   			</div>  
@@ -106,9 +106,9 @@
 		</main>
 		<div class="col-md-2 d-none d-md-block bg-light sidebar">
 			<h4>Messages</h4>
-			<p class="message">I'm going to watch the game bro.</p>
-			<p class="message">Me too!.</p>
-			{{message}}
+			{{#each newMessage}}
+			<p>{{text}}</p>
+			{{/each}}
 			<form id="message">
 				<label>Enter Message</label>
 				<input type="text" id="input_message">
@@ -120,19 +120,11 @@
 	</div>
 	<h5>Team News</h5>
 	<div class="row">
-		<div class="col-3">
+		<div class="col-6">
 			<div class="card module">
 			  <div class="card-body">
 			    <h5 class="card-title">Twitter</h5>
 			     <div id="twitterMessages"></div>
-			  </div>
-			</div>
-		</div>
-		<div class="col-3">
-			<div class="card module">
-			  <div class="card-body">
-			    <h5 class="card-title">Instagram</h5>
-			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 			  </div>
 			</div>
 		</div>
