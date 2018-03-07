@@ -4,9 +4,7 @@ var db = require("../models");
 
 // Create New Event =============================
 router.post("/", function(req, res) {
-    var newEvent = req.body;
-
-    console.log('test', newEvent);
+    var newEvent = req.body; 
   
     db.Event.create({
       title: newEvent.title,
