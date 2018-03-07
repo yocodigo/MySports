@@ -44,15 +44,19 @@ h1{
 }
 
 /* Map ==================  */ 
+#card-venues {
+	height: 400px;
+	width: 300px;
+}
 
 #map {
-    height: 200px;
-    width: 400px;
+    height: 400px;
+    width: 500px;
 	margin: auto;
 }
 
 #venues, #placeholder {
-	margin: 150px 50px 50px 100px;
+	margin: 5px 0px 0px 5px;
 
 }
 
