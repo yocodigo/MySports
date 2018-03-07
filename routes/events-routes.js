@@ -2,7 +2,7 @@
 var router = require('express').Router(); 
 var db = require("../models");
 
-// Create New Event
+// Create New Event =============================
 router.post("/", function(req, res) {
     var newEvent = req.body;
 
@@ -20,20 +20,13 @@ router.post("/", function(req, res) {
     });
   });
   
-  // Get all Events
+  // Get all Events ============================
   router.get("/", function(req, res) {
-  
-    db.Event.findAll({
-        
-  
-    }).then(function(event){
+    db.Event.findAll({}).then(function(event){
      var newEvents = {
         newEvent: event
     };
-    console.log(newEvents);
      res.render('event', newEvents)
-    
       })
     });
-
     module.exports = router; 
