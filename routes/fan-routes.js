@@ -1,5 +1,9 @@
 var router = require('express').Router(); 
 var db = require("../models");
+var Twitter = require("twitter");
+var twitterKeys = require("../config/keys.js").twitterKeys;
+var twitterClient = new Twitter(twitterKeys); 
+var helperFunctions = require("../public/assets/js/helperFunctions.js");
 
 router.post("/new", function(req, res) {
   var newFan = req.body;
@@ -15,27 +19,23 @@ router.post("/new", function(req, res) {
     return res.redirect('/auth/login');
   });
   
-});  
+}); 
 
 router.get('/twitter', function(req, res){
-  var Twitter = require("twitter");
-
-  var twitterKeys = {
-  consumer_key: 'dkwToGh1uUYl7GBrkrJu0n3MQ',
-  consumer_secret: 'l4eao34oeb96tA63JZHYlDEoYcOLmLQ0VLDBYIdvR7nSEReUoh',
-  access_token_key: '2807407982-N87cdI46rKU3GPDMzv5VC6sxmEuZxZzoN2OyXMW',
-  access_token_secret: 'dEhzJED4AYvCAnCccq0FkpsT8tBbea5MCeNR9mpJlq1fX'
-  }
-
-
-var twitterClient = new Twitter(twitterKeys);
-var twitterParams = {screen_name: 'Warriors', count: "20"};
-
-twitterClient.get('statuses/user_timeline', twitterParams, function(error, tweets, response) {
-    res.json(tweets);
+  console.log("The user id is", req.user.id);
+  helperFunctions.findUser(req.user.id, function(fan){
+    //Splits the Team into individual words Puts the name of the team in params
+    var array = fan.team.split(" ");
+    var teamName = array[array.length-1]; 
+    var twitterParams = {screen_name: teamName, count: "20"};
+    twitterClient.get('statuses/user_timeline', twitterParams, function(error, tweets, response) {
+      if(error){
+        throw error; 
+      }
+        res.json(tweets);
+    });
+  }); 
 });
-
-})
 
 // Get All Usernames For Event Form ===================
 router.get("/all", function(req, res) {
