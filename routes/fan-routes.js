@@ -39,15 +39,24 @@ router.get('/twitter', function(req, res){
 
 // Get All Usernames For Event Form ===================
 router.get("/all", function(req, res) {
-  db.Fan.findAll({}).then(function(res){   
-    var opts = '';
-    for(i=0; i<res.length; i++){
-      fanName = (res[i].dataValues.name);
-      console.log(fanName);
+  db.Fan.findAll({}).then(function(fans){   
+    // console.log(fans + "HERERERERERE")
+    // res.json(fans)
+    var fanHolder = [];
+    // var opts = '';
+    for(i=0; i<fans.length; i++){
+      fanHolder.push(fans[i].dataValues.name)
+      // console.log(res[i])
+    }
+    // console.log(fanHolder)
+    
+    res.json(fanHolder)
+    //   fanName = (res[i].dataValues.name);
+    //   console.log(fanName);
       // opts += '<option>' + this + '</option>';
       // $('.option-menu').html(opts);
-    } 
+    }); 
   });
-}); 
+
 
 module.exports = router; 
