@@ -29,6 +29,13 @@ h1{
 	color: white;
 }
 
+/* Team Banner  ================ */
+.teamBanner img{
+	width:150px;
+	height:150px;
+	margin-left:40px
+}
+
 
 
 /*  Events ==============  */
