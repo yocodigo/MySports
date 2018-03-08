@@ -75,8 +75,17 @@
   </div>
 </div>
 
+<p><span id="city" data-city="{{city}}"><span></span></p>
+
+
+
+<div class="teamBanner">
+	<div class="row">
+	</div>
+</div>
 
 <div class="teamSchedule">
+<<<<<<< HEAD
 	<div class="row">
 		<div class="teamRecord col-3" >
 			Team Record
@@ -87,6 +96,19 @@
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 				  +
 				</button>
+=======
+	<div class="row color1">
+
+		<div class="teamRecord col-3" >
+						Team Record
+		</div>
+		<div class="upcomingGames col9">
+			<div class="newEvent">
+							<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+				<span class="calendar-icon"></span>
+					</button>
+>>>>>>> 24d3d982b282f8299e6b88d896fff5a29a40ead0
 			</div>
 		</div>
 	</div>
@@ -100,8 +122,10 @@
 					<div id="map"></div>
 				</div>
 				<div class="col-md-3" id="venues-container">
-					<div id="venues">
-						{{!-- (Venue listings go here) --}}
+					<div class="card module" id="card-venues">
+						<div class="card-body">
+							<div id="venues"></div>
+						</div>
 					</div>
 				</div>
 			</div>

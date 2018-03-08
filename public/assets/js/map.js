@@ -9,7 +9,7 @@ var markers = [];
 function GetLatlong(){
   var geocoder = new google.maps.Geocoder();
   var address = $('#city').data('city');
-
+  console.log(address);
   geocoder.geocode({ 'address': address }, function (results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         var latitude = results[0].geometry.location.lat();
