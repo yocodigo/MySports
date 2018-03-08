@@ -26,7 +26,7 @@ $(function() {
     }).then(function(data) {
         // console.log("created new Fan");
         // After Creating the new User take them back to the login screen
-        window.location.href = "/";
+        window.location.href = "/signin";
     });
 
 });
