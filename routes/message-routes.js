@@ -10,19 +10,20 @@ router.post("/", function(req, res) {
       text: newMessage.message,
       user: newMessage.message
     }).then(function(message){
-      //console.log("A new message was created " + newMessage.message);
-      res.render('index', newMessage);
+      console.log("A new message was created " + newMessage.message);
+      res.render('index', newMessage );
     });
   });
   
-  // Get all Messages ============================
+ // Get all Messages ============================
   router.get("/", function(req, res) {
-    db.Message.findAll({}).then(function(event){
+      console.log('test')
+    db.Message.findAll({}).then(function(message){
 
-     var newMessage = {
-        text: message
-    };
-     res.render('index', newMessage)
+        var newMessage = {
+            text: message
+        };
+    res.render('index', newMessage)
       })
     });
      module.exports = router; 

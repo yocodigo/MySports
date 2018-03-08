@@ -3,6 +3,17 @@ var authRoutes = require('./auth-routes.js');
 var fanRoutes = require('./fan-routes.js');
 var eventsRoutes = require('./events-routes.js');
 var messageRoutes = require('./message-routes.js');
+<<<<<<< HEAD
+var indexRoutes = require('./index-routes.js')
+
+module.exports = function(app) {
+
+	// app.get("/", function(req, res){
+	// 	res.render("index", {user: req.user});
+	// });
+
+	app.use('/', indexRoutes);
+=======
 var db = require("../models");
 
 //MiddleWare to check if the user is logged in or not.
@@ -44,6 +55,7 @@ module.exports = function(app) {
 		});
 	});
 
+>>>>>>> 24d3d982b282f8299e6b88d896fff5a29a40ead0
 	//All the other routes /auth, /profile, and /api
 	app.use('/auth', authRoutes);
 	//app.use('/profile', profileRoutes);

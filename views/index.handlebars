@@ -6,10 +6,12 @@
 		</li>
 		{{/unless}}
 		{{#if user}}
+		<li class="nav-item">Hi <span>{{name}}</span></li>
 		<li class="nav-item">
 			<a class="nav-link" id="title" href="/auth/logout">Logout</a>
 		</li>
 		{{/if}}
+		
 		<li class="nav-item">
 			<a class="nav-link" id="title" href="/">Homepage</a>
 		</li>
@@ -83,6 +85,18 @@
 </div>
 
 <div class="teamSchedule">
+<<<<<<< HEAD
+	<div class="row">
+		<div class="teamRecord col-3" >
+			Team Record
+		</div>
+		<div class="upcomingGames col9">
+			<div class="newEvent">
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+				  +
+				</button>
+=======
 	<div class="row color1">
 
 		<div class="teamRecord col-3" >
@@ -94,6 +108,7 @@
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 				<span class="calendar-icon"></span>
 					</button>
+>>>>>>> 24d3d982b282f8299e6b88d896fff5a29a40ead0
 			</div>
 		</div>
 	</div>
@@ -117,9 +132,9 @@
 		</main>
 		<div class="col-md-2 d-none d-md-block bg-light sidebar">
 			<h4>Messages</h4>
-			{{#each text}}
-			<p>{{message}}</p>
-			{{/each}}
+			{{#if text}}
+				<p>{{text}}</p>
+			{{/if}}
 			<form id="message">
 				<label>Enter Message</label>
 				<input type="text" id="input_message">
@@ -147,5 +162,22 @@
 			  </div>
 			</div>
 		</div>
+	</div>
+	<h5>Events</h5>
+	<div class="row">
+		{{#each newEvent}}
+			<div class="col-3">			
+				<div class="card event">
+  					<div class="card-body">
+  					  <h5 class="card-title">Event: {{title}}</h5>
+  					  <p class="card-text">{{description}}</p>
+					  <p>When: {{date}}</p>
+					  <p>Where: {{location}}</p>
+					  <p><span>Who's Going: {{attendees}}</span></p>
+  					  <a href="#" class="btn btn-primary">I'm Going</a>
+  					</div>
+				</div>	
+			</div>
+		{{/each}}
 	</div>
 </div>
