@@ -1,4 +1,3 @@
-
 // *****************************************************************************
 // Server.js - This file is the initial starting point for the Node/Express server.
 //
@@ -30,8 +29,8 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //For Cookie Sessions
 app.use(cookieSession({
-	maxAge: 24 * 60 * 60 * 1000,
-	keys: [keys.cookieSession.cookieKey]
+  maxAge: 24 * 60 * 60 * 1000,
+  keys: [keys.cookieSession.cookieKey]
 }))
 
 app.use(passport.initialize());
@@ -46,7 +45,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
-require("./routes/handlebar-routes.js")(app); 
+require("./routes/handlebar-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
