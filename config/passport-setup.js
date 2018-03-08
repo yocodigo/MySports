@@ -1,6 +1,6 @@
 var passport = require('passport'); 
 var GoogleStrategy = require('passport-google-oauth20');
-var keys = require('./keys.js');
+var keys = require('/keys.js');
 // Requiring our Fans and GoogleUser model
 var db = require("../models");
 
