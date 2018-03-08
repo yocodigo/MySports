@@ -9,7 +9,6 @@ var markers = [];
 function GetLatlong(){
   var geocoder = new google.maps.Geocoder();
   var address = $('#city').data('city');
-  console.log(address);
   geocoder.geocode({ 'address': address }, function (results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         var latitude = results[0].geometry.location.lat();
@@ -63,8 +62,6 @@ function callback(results, status) {
       rating = results[i].rating;
       $('#venues').append(venues + "<br>" + "Address: " + vicinity + "<br>" + "Rating: " + rating + "<br>" + "<br>");
     }
-    console.log(results);
-    console.log(results[0].opening_hours);
   }
 }
 
