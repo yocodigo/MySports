@@ -12,17 +12,17 @@ var authCheck = function(req, res, next) {
 }
 
 
-router.get("/", function(req, res) {
-  if (req.user) {
-    res.render("index", { user: req.user });
-  } else {
-    res.redirect('/auth/login');
-  }
-  //res.render("index", {user: req.user});
-});
+// router.get("/", function(req, res) {
+//   if (req.user) {
+//     res.render("index", { user: req.user });
+//   } else {
+//     res.redirect('/auth/login');
+//   }
+//   //res.render("index", {user: req.user});
+// });
 
 
-router.get("/signin", authCheck, function(req, res) {
+router.get("/", authCheck, function(req, res) {
   db.Fan.findOne({
     where: {
       googleID: req.user.googleID

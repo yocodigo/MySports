@@ -1,12 +1,7 @@
 <nav class="navbar">
 	<ul class="nav">
-		{{#unless user}}
-		<li class="nav-item">
-			<a class="nav-link" id="title" href="/auth/google">Login Google+</a>
-		</li>
-		{{/unless}}
-		{{#if user}}
-		<li class="nav-item">Hi <span>{{name}}</span></li>
+		{{#if name}}
+		<li class="nav-item userTitle"><a href="" class="nav-link">Hi {{name}}</a></li>
 		<li class="nav-item">
 			<a class="nav-link" id="title" href="/auth/logout">Logout</a>
 		</li>
@@ -61,8 +56,11 @@
   			</div>
 			<div class="form-group">
   			  <label for="exampleInputPassword1">Attendees</label>
-			  <select class="js-example-basic-single" multiple="multiple" id="input_attendees">
-			    <option></option>
+			  <select class="custom-select option-menu" id="input_attendees">
+			    <option>Jimbo Smith</option>
+					<option>Ralph Ralphinson</option>
+					<option>Bilbo Baggins</option>
+					<option>Jane Doe</option>
 			  </select>
   			</div>  
 			<div class="modal-footer">

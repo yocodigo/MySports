@@ -14,7 +14,8 @@ router.post("/", function(req, res) {
       attendees: newEvent.attendees
     }).then(function(newEvent){
       console.log("A new event was created " + newEvent.title);
-      res.render('event', newEvent);
+      //res.render('event', newEvent);
+      res.end();
     });
   });
   

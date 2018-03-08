@@ -30,16 +30,16 @@ var newEvent = {
 });
 
 // Get all fans for mulit select
-  $('#input_attendees').select2({
-    placeholder: 'Pick Attendees',
-    ajax: {
-      url: '/fan/all',
-      datatype: 'json',
-      results: function(params){
-        return {results: params}
-      }
-    }
-  })
+  // $('#input_attendees').select2({
+  //   placeholder: 'Pick Attendees',
+  //   ajax: {
+  //     url: '/fan/all',
+  //     datatype: 'json',
+  //     results: function(params){
+  //       return {results: params}
+  //     }
+  //   }
+  // })
 
 });
 
