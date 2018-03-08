@@ -25,28 +25,11 @@ var newEvent = {
     type: "POST",
     data: newEvent
   }).then(function(data) {
-      // console.log("created new event");
-      // console.log(newEvent);
       location.reload();
   });
-
-  // Get all fans
-  // $.ajax({
-  //   url: "/fan/all",
-  //   type: "GET"
-  //   }).then(function(res){
-  //     var opts = '';
-  //     $.each(res, function(i){
-  //         opts += '<option>' + this + '</option>';
-  //     });
-  //     $('.option-menu').html(opts);
-
-  //     location.reload();
-  //   });
 });
 
-
-
+// Get all fans for mulit select
   $('#input_attendees').select2({
     placeholder: 'Pick Attendees',
     ajax: {
@@ -56,14 +39,6 @@ var newEvent = {
         return {results: params}
       }
     }
-    
-    // ajax: {
-    //   type: 'GET',
-    //   url: '/fan/all',
-    //   dataType: 'json'
-    //   // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
-      
-    // }
   })
 
 });
