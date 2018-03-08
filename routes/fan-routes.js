@@ -5,10 +5,11 @@ var twitterKeys = require("../config/keys.js").twitterKeys;
 var twitterClient = new Twitter(twitterKeys); 
 var request = require('request');
 var helperFunctions = require("../public/assets/js/helperFunctions.js");
+var team;
 
 router.post("/new", function(req, res) {
   var newFan = req.body;
-
+  team = newFan.team;
   db.Fan.create({
     name: newFan.name,
     email: newFan.email,
@@ -17,10 +18,34 @@ router.post("/new", function(req, res) {
     googleID: newFan.googleID
   }).then(function(newFan){
     console.log("A new fan was created " + newFan);
-    return res.redirect('/auth/login');
+    return res.render('/auth/login');
   });
   
 }); 
+
+router.get('/colors', function(req,res){
+  // db.nbaTeam.findAll({}).then(function(teams){
+    // console.log(teams)
+
+    helperFunctions.findUser(req.user.id, function(fan){
+      db.nbaTeam.findOne({
+        where: {
+          name: fan.team
+        }
+      }).then(function(team) {
+        console.log(team);
+      var teamObj = {
+        color1: team.color1,
+        color2: team.color2,
+        logo: team.logo
+      }
+      res.json(teamObj);
+      });
+    });
+    
+    
+  // })
+})
 
 router.get('/twitter', function(req, res){
   console.log("The user id is", req.user.id);
@@ -60,15 +85,24 @@ router.get('/todaysGames', function(req, res){
 
 // Get All Usernames For Event Form ===================
 router.get("/all", function(req, res) {
-  db.Fan.findAll({}).then(function(res){   
-    var opts = '';
-    for(i=0; i<res.length; i++){
-      fanName = (res[i].dataValues.name);
-      console.log(fanName);
+  db.Fan.findAll({}).then(function(fans){   
+    // console.log(fans + "HERERERERERE")
+    // res.json(fans)
+    var fanHolder = [];
+    // var opts = '';
+    for(i=0; i<fans.length; i++){
+      fanHolder.push(fans[i].dataValues.name)
+      // console.log(res[i])
+    }
+    // console.log(fanHolder)
+    
+    res.json(fanHolder)
+    //   fanName = (res[i].dataValues.name);
+    //   console.log(fanName);
       // opts += '<option>' + this + '</option>';
       // $('.option-menu').html(opts);
-    } 
+    }); 
   });
-}); 
+
 
 module.exports = router; 

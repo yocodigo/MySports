@@ -2,7 +2,6 @@ $("#submit-message").on("click", function(event) {
     event.preventDefault();
 
     var messageText = $("#input_message").val().trim();
-    
     var newMessage = {
         message: messageText,
         user: 'user'

@@ -14,7 +14,6 @@ var keys = require('./config/keys.js');
 var passport = require('passport');
 
 
-
 // Sets up the Express App
 // =============================================================
 var app = express();

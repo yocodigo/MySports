@@ -1,8 +1,7 @@
 var router = require('express').Router(); 
-// Requiring our fans and googleUser models
 var db = require("../models");
 
-//MiddleWare to check if the user is logged in or not.
+  //MiddleWare to check if the user is logged in or not.
 var authCheck = function(req, res, next){
 	if(!req.user){
 		//If the user is not logged In 
@@ -13,7 +12,14 @@ var authCheck = function(req, res, next){
 	}
 }
 
-router.get("/", authCheck, function(req, res){
+
+router.get("/", function(req, res) {
+   res.redirect('/auth/login');
+  //res.render("index", {user: req.user});
+});
+
+
+router.get("/signin", authCheck, function(req, res){
 	db.Fan.findOne({
 			where: {
 				googleID: req.user.googleID
@@ -21,7 +27,7 @@ router.get("/", authCheck, function(req, res){
 		}).then(function(dbFan){
 			//If the Fan is in the database
 			if(dbFan){
-				res.render("profilePage", dbFan.dataValues);
+				res.render("index", dbFan.dataValues);
 			}
 			else{
 				//otherwise they must signup
@@ -30,4 +36,4 @@ router.get("/", authCheck, function(req, res){
 	});
 });
 
-module.exports = router; 
+ module.exports = router; 
