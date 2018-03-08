@@ -30,7 +30,16 @@ router.get("/", authCheck, function(req, res) {
   }).then(function(dbFan) {
     //If the Fan is in the database
     if (dbFan) {
-      res.render("index", dbFan.dataValues);
+      db.Event.findAll({}).then(function(event){
+        console.log(dbFan.dataValues)
+        var newObject = {
+           newEvent: event,
+           fan: dbFan.dataValues
+        };
+        // console.log('testdlksldjfa;s', newObject.newEvent);
+        // res.render('events', newObject);
+        res.render("index", newObject);
+        })
     } else {
       //otherwise they must signup
       return res.redirect('/auth/signup');

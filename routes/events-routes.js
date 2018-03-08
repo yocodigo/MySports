@@ -21,11 +21,29 @@ router.post("/", function(req, res) {
   
   // Get all Events ============================
   router.get("/", function(req, res) {
-    db.Event.findAll({}).then(function(event){
-     var newEvents = {
-        newEvent: event
-    };
-     res.render('event', newEvents)
-      })
+    db.Fan.findOne({
+      where: {
+        googleID: req.user.googleID
+      }
+    }).then(function(dbFan) {
+      //If the Fan is in the database
+      
+      db.Event.findAll({}).then(function(event){
+        var newObject = {
+           newEvent: event,
+           fan: dbFan
+        };
+        console.log('testdlksldjfa;s', newObject.newEvent);
+        res.render('events', newObject);
+        })
+      });
+      //  if (dbFan) {
+      //   res.render("index", dbFan.dataValues);
+      // } else {
+      //   //otherwise they must signup
+      //   return res.redirect('/auth/signup');
+      // }
     });
+
+    
     module.exports = router; 
