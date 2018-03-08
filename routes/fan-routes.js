@@ -18,7 +18,7 @@ router.post("/new", function(req, res) {
     googleID: newFan.googleID
   }).then(function(newFan) {
     console.log("A new fan was created " + newFan);
-    return res.render('index', );
+    return res.render('index');
   });
 
 });
@@ -50,22 +50,22 @@ router.get('/colors', function(req, res) {
 })
 
 router.get('/twitter', function(req, res) {
-  // if (req.user) {
-  //   console.log("The user id is", req.user.id);
-  //   helperFunctions.findUser(req.user.id, function(fan) {
-  //     //Splits the Team into individual words Puts the name of the team in params
-  //     var array = fan.team.split(" ");
-  //     var teamName = array[array.length - 1];
-  //     var twitterParams = { screen_name: teamName, count: "20" };
-  //     console.log(twitterParams.screen_name + "HERERERERERERERERERERERERE")
-  //     twitterClient.get('statuses/user_timeline', twitterParams, function(error, tweets, response) {
-  //       if (error) {
-  //         throw error;
-  //       }
-  //       res.json(tweets);
-  //     });
-  //   });
-  // }
+  if (req.user) {
+    console.log("The user id is", req.user.id);
+    helperFunctions.findUser(req.user.id, function(fan) {
+      //Splits the Team into individual words Puts the name of the team in params
+      var array = fan.team.split(" ");
+      var teamName = array[array.length - 1];
+      var twitterParams = { screen_name: teamName, count: "20" };
+      console.log(twitterParams.screen_name + "HERERERERERERERERERERERERE")
+      twitterClient.get('statuses/user_timeline', twitterParams, function(error, tweets, response) {
+        if (error) {
+          throw error;
+        }
+        res.json(tweets);
+      });
+    });
+  }
 });
 
 router.get('/teamGames', function(req, res) {
