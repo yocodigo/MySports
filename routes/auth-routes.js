@@ -20,7 +20,7 @@ router.get('/google', passport.authenticate('google',{
 
 
 router.get('/google/redirect', passport.authenticate('google'), function(req, res){
-	res.redirect('/profile/');
+	res.redirect('/signin');
 });
 
 router.get('/signup', function(req,res){

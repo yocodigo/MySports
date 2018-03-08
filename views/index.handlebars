@@ -6,10 +6,12 @@
 		</li>
 		{{/unless}}
 		{{#if user}}
+		<li class="nav-item">Hi <span>{{name}}</span></li>
 		<li class="nav-item">
 			<a class="nav-link" id="title" href="/auth/logout">Logout</a>
 		</li>
 		{{/if}}
+		
 		<li class="nav-item">
 			<a class="nav-link" id="title" href="/">Homepage</a>
 		</li>
@@ -60,7 +62,7 @@
 			<div class="form-group">
   			  <label for="exampleInputPassword1">Attendees</label>
 			  <select class="js-example-basic-single" multiple="multiple" id="input_attendees">
-			    <option selected>Open this select menu</option>
+			    <option></option>
 			  </select>
   			</div>  
   			
@@ -73,22 +75,30 @@
   </div>
 </div>
 
+<p><span id="city" data-city="{{city}}"><span></span></p>
+
+
+
+<div class="teamBanner">
+	<div class="row">
+	</div>
+</div>
 
 <div class="teamSchedule">
-				<div class="row">
-					<div class="teamRecord col-3" >
-						Team Record
-					</div>
-					<div class="upcomingGames col9">
-						<div class="newEvent">
-							<!-- Button trigger modal -->
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-							  <span class="calendar-icon"></span>
-							</button>
-						</div>
-					</div>
-				</div>
+	<div class="row">
+		<div class="teamRecord col-3" >
+			Team Record
+		</div>
+		<div class="upcomingGames col-9">
+			<div class="newEvent">
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+				  +
+				</button>
 			</div>
+		</div>
+	</div>
+</div>
 <div class="container-fluid">
 	<div class="row">
 		<main class="col">
@@ -98,17 +108,19 @@
 					<div id="map"></div>
 				</div>
 				<div class="col-md-3" id="venues-container">
-					<div id="venues">
-						{{!-- (Venue listings go here) --}}
+					<div class="card module" id="card-venues">
+						<div class="card-body">
+							<div id="venues"></div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</main>
 		<div class="col-md-2 d-none d-md-block bg-light sidebar">
 			<h4>Messages</h4>
-			{{#each text}}
-			<p>{{message}}</p>
-			{{/each}}
+			{{#if text}}
+				<p>{{text}}</p>
+			{{/if}}
 			<form id="message">
 				<label>Enter Message</label>
 				<input type="text" id="input_message">
@@ -136,5 +148,22 @@
 			  </div>
 			</div>
 		</div>
+	</div>
+	<h5>Events</h5>
+	<div class="row">
+		{{#each newEvent}}
+			<div class="col-3">			
+				<div class="card event">
+  					<div class="card-body">
+  					  <h5 class="card-title">Event: {{title}}</h5>
+  					  <p class="card-text">{{description}}</p>
+					  <p>When: {{date}}</p>
+					  <p>Where: {{location}}</p>
+					  <p><span>Who's Going: {{attendees}}</span></p>
+  					  <a href="#" class="btn btn-primary">I'm Going</a>
+  					</div>
+				</div>	
+			</div>
+		{{/each}}
 	</div>
 </div>

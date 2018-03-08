@@ -1,3 +1,4 @@
+$(document).ready(function(){
 // Get info from the form
 $("#create-event").on("click", function(event) {
     event.preventDefault();
@@ -24,34 +25,19 @@ var newEvent = {
     type: "POST",
     data: newEvent
   }).then(function(data) {
-      // console.log("created new event");
-      // console.log(newEvent);
       location.reload();
   });
-
-  // Get all fans
-  // $.ajax({
-  //   url: "/fan/all",
-  //   type: "GET"
-  //   }).then(function(res){
-  //     var opts = '';
-  //     $.each(res, function(i){
-  //         opts += '<option>' + this + '</option>';
-  //     });
-  //     $('.option-menu').html(opts);
-
-  //     location.reload();
-  //   });
 });
 
-
-$(document).ready(function(res) {
-  $('.js-data-example-ajax').select2({
+// Get all fans for mulit select
+  $('#input_attendees').select2({
+    placeholder: 'Pick Attendees',
     ajax: {
-      type: 'GET',
       url: '/fan/all',
-      dataType: 'json'
-      // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+      datatype: 'json',
+      results: function(params){
+        return {results: params}
+      }
     }
   })
 
