@@ -3,6 +3,7 @@ var db = require("../models");
 var Twitter = require("twitter");
 var twitterKeys = require("../config/keys.js").twitterKeys;
 var twitterClient = new Twitter(twitterKeys); 
+var request = require('request');
 var helperFunctions = require("../public/assets/js/helperFunctions.js");
 var team;
 
@@ -60,6 +61,26 @@ router.get('/twitter', function(req, res){
         res.json(tweets);
     });
   }); 
+});
+
+router.get('/teamGames', function(req, res){
+
+});
+
+router.get('/todaysGames', function(req, res){
+  var today = helperFunctions.getDate();
+  var queryUrl = "https://api.sportradar.us/nba/trial/v4/en/games/2018/" + today.month + "/" + today.day + "/schedule.json?api_key=6pjpbc2mehgjcrdzfvnafmwn";
+  request(queryUrl, function(error, response, body) {
+      // If the request is successful
+      if (!error && response.statusCode === 200) {
+         //console.log(response);
+         var respObj =  JSON.parse(body);
+         res.json(respObj.games);
+      }
+      else{
+        console.log(error);
+      }
+  });
 });
 
 // Get All Usernames For Event Form ===================
