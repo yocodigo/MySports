@@ -1,6 +1,5 @@
 <nav class="navbar">
 	<ul class="nav">
-	
 		<li class="nav-item userTitle"><a href="" class="nav-link">Hi {{fan.name}}</a></li>
 		<li class="nav-item">
 			<a class="nav-link" id="title" href="/auth/logout">Logout</a>
@@ -23,42 +22,42 @@
       </div>
       <div class="modal-body">
         <form id="event-form">
-  			<div class="form-group">
-  			  <label for="exampleInputEmail1">Event Title</label>
-  			  <input class="form-control" id="input_eventName" placeholder="Enter event name">
-  			</div>
-  			<div class="form-group">
-  			  <label for="exampleInputPassword1">Location</label>
-  			  <input class="form-control" id="input_eventLocation" placeholder="Location Name">
-  			</div>
-			<div class="form-group">
-  			  <label for="exampleInputPassword1">Description</label>
-  			  <input class="form-control" id="input_description" placeholder="description">
-  			</div>  
-			<div class="form-group">
-  			  <label for="exampleInputPassword1">Day and Time</label>
-				<div class="row">
-				<div class="col">
-					<input data-format="dd/MM/yyyy" class="form-control" id="input_date" placeholder="dd/MM/yyyy">
-				</div>
-				<div class="col">
-					<input data-format="hh:mm:ss" class="form-control" id="input_time" placeholder="hh:mm:ss">
-				</div>
-				</div>
-  			</div>
-			<div class="form-group">
-  			  <label for="exampleInputPassword1">Attendees</label>
-			  <select class="custom-select option-menu" id="input_attendees">
-			    <option>Jimbo Smith</option>
-					<option>Ralph Ralphinson</option>
-					<option>Bilbo Baggins</option>
-					<option>Jane Doe</option>
-			  </select>
-  			</div>  
-			<div class="modal-footer">
+  				<div class="form-group">
+  				  <label for="exampleInputEmail1">Event Title</label>
+  				  <input class="form-control" id="input_eventName" placeholder="Enter event name">
+  				</div>
+  				<div class="form-group">
+  				  <label for="exampleInputPassword1">Location</label>
+  				  <input class="form-control" id="input_eventLocation" placeholder="Location Name">
+  				</div>
+					<div class="form-group">
+  			  	<label for="exampleInputPassword1">Description</label>
+  			  	<input class="form-control" id="input_description" placeholder="description">
+  				</div>  
+					<div class="form-group">
+  					  <label for="exampleInputPassword1">Day and Time</label>
+						<div class="row">
+							<div class="col">
+								<input data-format="dd/MM/yyyy" class="form-control" id="input_date" placeholder="dd/MM/yyyy">
+							</div>
+							<div class="col">
+								<input data-format="hh:mm:ss" class="form-control" id="input_time" placeholder="hh:mm:ss">
+							</div>
+						</div>
+  				</div>
+					<div class="form-group">
+  					<label for="exampleInputPassword1">Attendees</label>
+					  <select class="custom-select option-menu" id="input_attendees">
+					    <option>Jimbo Smith</option>
+							<option>Ralph Ralphinson</option>
+							<option>Bilbo Baggins</option>
+							<option>Jane Doe</option>
+					  </select>
+  				</div>  
+					<div class="modal-footer">
         		<button type="submit" id ="create-event" class="btn btn-primary">Submit</button>
       		</div>
-		</form>
+				</form>
       </div>
     </div>
   </div>
@@ -69,8 +68,7 @@
 	<div class="row">
 	</div>
 </div>
-
-<div class="teamSchedule">
+<div class="teamSchedule" id="teamGames">
 	<div class="row">
 		<div class="teamRecord col-3" >
 			Team Record
@@ -78,9 +76,7 @@
 		<div class="upcomingGames col-9">
 			<div class="newEvent">
 				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-				  +
-				</button>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">+</button>
 			</div>
 		</div>
 	</div>
@@ -88,7 +84,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<main class="col">
-			<h4>Where To Watch The Game</h4>
+			<h2>Where To Watch The Game</h2>
 			<div class="row">
 				<div class="col-md-6">
 					<div id="map"></div>
@@ -105,7 +101,7 @@
 		<div class="col-md-2 d-none d-md-block bg-light sidebar">
 			<h4>Messages</h4>
 			{{#each message}}
-				<p>{{text}}</p>
+				<p class="message">{{text}}</p>
 			{{/each}}
 			<form id="message">
 				<label>Enter Message</label>
@@ -116,7 +112,7 @@
 		<br><br>
 		{{!-- Sport Bar Locations --}}
 	</div>
-	<h5>Team News</h5>
+	<h2>Team News</h2>
 	<div class="row">
 		<div class="col-6">
 			<div class="card module">
@@ -135,7 +131,7 @@
 			</div>
 		</div>
 	</div>
-	<h5>Events</h5>
+	<h2>Events</h2>
 	<div class="row">
 		{{#each newEvent}}
 			<div class="col-3">			
