@@ -1,4 +1,5 @@
-// function getTwitter() {
+// function getTwitter()
+
 $.ajax({
     url: '/fan/twitter',
     method: 'GET'

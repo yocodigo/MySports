@@ -69,7 +69,252 @@ router.get('/twitter', function(req, res) {
 });
 
 router.get('/teamGames', function(req, res) {
+  if (req.user) {
+    helperFunctions.findUser(req.user.id, function(fan) {
+      var favteam = fan.team;
+      function nbaSchedule1(){
+        var today = new Date();
+        var mm = today.getMonth()+1;
+        var yyyy = today.getFullYear();
+    
+        if(mm<10) {
+            mm = '0'+mm
+        } 
+        var dd1 = today.getDate()+1;
+        if(dd1<10) {
+            dd1 = '0'+dd1;
+        }    
+        
+        var queryUrl = "https://api.sportradar.us/nba/trial/v4/en/games/2018/"+mm+"/"+dd1+"/"+"schedule.json?api_key=6pjpbc2mehgjcrdzfvnafmwn";  
+        request(queryUrl, function(error, response, body) {
+            
+            if (!error && response.statusCode === 200) {
+                for (i = 0; i < JSON.parse(body).games.length; i++) {
+                    var game = JSON.parse(body).games[i];
+                    var home = game.home.name;
+                    var away = game.away.name;
+                    if (home === favteam || away === favteam) {
+                        var utcDate = JSON.parse(body).games[i].scheduled;
+                        var localDate = new Date(utcDate).toString().replace(/GMT.*/g,"");
+                        console.log(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
+                        // $('#schedule').append(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
+                    }
+                }
+            }          
+            else{
+                console.log("ERROR!");
+            }
+        });  
+        setTimeout(nbaSchedule2, 1750);
+      }
+    
+        function nbaSchedule2(){
+            var today = new Date();
+            var mm = today.getMonth()+1;
+            var yyyy = today.getFullYear();
+        
+            if(mm<10) {
+                mm = '0'+mm
+            } 
+            var dd2 = today.getDate() + 2;
+            if(dd2<10) {
+                dd2 = '0'+dd2;
+            }    
+            var queryUrl = "https://api.sportradar.us/nba/trial/v4/en/games/2018/"+mm+"/"+dd2+"/"+"schedule.json?api_key=6pjpbc2mehgjcrdzfvnafmwn";  
+            request(queryUrl, function(error, response, body) {
+                
+                if (!error && response.statusCode === 200) {
+                    for (i = 0; i < JSON.parse(body).games.length; i++) {
+                        var game = JSON.parse(body).games[i];
+                        var home = game.home.name;
+                        var away = game.away.name;
+                        if (home === favteam || away === favteam) {
+                            var utcDate = JSON.parse(body).games[i].scheduled;
+                            var localDate = new Date(utcDate).toString().replace(/GMT.*/g,"");
+                            console.log(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
+                        }
+                    }
+                }          
+                else{
+                    console.log("ERROR!");
+                }
+            });  
+            setTimeout(nbaSchedule3, 1750);   
+        }
+        
+        function nbaSchedule3(){
+            var today = new Date();
+            var mm = today.getMonth()+1;
+            var yyyy = today.getFullYear();
+        
+            if(mm<10) {
+                mm = '0'+mm
+            } 
+            var dd3 = today.getDate() + 3;
+            if(dd3<10) {
+                dd3 = '0'+dd3;
+            }    
+            var queryUrl = "https://api.sportradar.us/nba/trial/v4/en/games/2018/"+mm+"/"+dd3+"/"+"schedule.json?api_key=6pjpbc2mehgjcrdzfvnafmwn";  
+            request(queryUrl, function(error, response, body) {
+                
+                if (!error && response.statusCode === 200) {
+                    for (i = 0; i < JSON.parse(body).games.length; i++) {
+                        var game = JSON.parse(body).games[i];
+                        var home = game.home.name;
+                        var away = game.away.name;
+                        if (home === favteam || away === favteam) {
+                            var utcDate = JSON.parse(body).games[i].scheduled;
+                            var localDate = new Date(utcDate).toString().replace(/GMT.*/g,"");
+                            console.log(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
+                        }
+                    }
+                }          
+                else{
+                    console.log("ERROR!");
+                }
+            });  
+            setTimeout(nbaSchedule4, 1750);   
+        }
+        
+        function nbaSchedule4(){
+            var today = new Date();
+            var mm = today.getMonth()+1;
+            var yyyy = today.getFullYear();
+        
+            if(mm<10) {
+                mm = '0'+mm
+            } 
+            var dd4 = today.getDate() + 4;
+            if(dd4<10) {
+                dd4 = '0'+dd4;
+            }    
+            var queryUrl = "https://api.sportradar.us/nba/trial/v4/en/games/2018/"+mm+"/"+dd4+"/"+"schedule.json?api_key=6pjpbc2mehgjcrdzfvnafmwn";  
+            request(queryUrl, function(error, response, body) {
+                
+                if (!error && response.statusCode === 200) {
+                    for (i = 0; i < JSON.parse(body).games.length; i++) {
+                        var game = JSON.parse(body).games[i];
+                        var home = game.home.name;
+                        var away = game.away.name;
+                        if (home === favteam || away === favteam) {
+                            var utcDate = JSON.parse(body).games[i].scheduled;
+                            var localDate = new Date(utcDate).toString().replace(/GMT.*/g,"");
+                            console.log(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
+                        }
+                    }
+                }          
+                else{
+                    console.log("ERROR!");
+                }
+            });  
+            setTimeout(nbaSchedule5, 1750);   
+        }
+        
+        function nbaSchedule5(){
+            var today = new Date();
+            var mm = today.getMonth()+1;
+            var yyyy = today.getFullYear();
+        
+            if(mm<10) {
+                mm = '0'+mm
+            } 
+            var dd5 = today.getDate() + 5;
+            if(dd5<10) {
+                dd5 = '0'+dd5;
+            }    
+            var queryUrl = "https://api.sportradar.us/nba/trial/v4/en/games/2018/"+mm+"/"+dd5+"/"+"schedule.json?api_key=6pjpbc2mehgjcrdzfvnafmwn";  
+            request(queryUrl, function(error, response, body) {
+                
+                if (!error && response.statusCode === 200) {
+                    for (i = 0; i < JSON.parse(body).games.length; i++) {
+                        var game = JSON.parse(body).games[i];
+                        var home = game.home.name;
+                        var away = game.away.name;
+                        if (home === favteam || away === favteam) {
+                            var utcDate = JSON.parse(body).games[i].scheduled;
+                            var localDate = new Date(utcDate).toString().replace(/GMT.*/g,"");
+                            console.log(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
+                        }
+                    }
+                }          
+                else{
+                    console.log("ERROR!");
+                }
+            });  
+            setTimeout(nbaSchedule6, 1750);   
+        }
+        
+        function nbaSchedule6(){
+            var today = new Date();
+            var mm = today.getMonth()+1;
+            var yyyy = today.getFullYear();
+        
+            if(mm<10) {
+                mm = '0'+mm
+            } 
+            var dd6 = today.getDate() + 6;
+            if(dd6<10) {
+                dd6 = '0'+dd6;
+            }    
+            var queryUrl = "https://api.sportradar.us/nba/trial/v4/en/games/2018/"+mm+"/"+dd6+"/"+"schedule.json?api_key=6pjpbc2mehgjcrdzfvnafmwn";  
+            request(queryUrl, function(error, response, body) {  
+                if (!error && response.statusCode === 200) {
+                    for (i = 0; i < JSON.parse(body).games.length; i++) {
+                        var game = JSON.parse(body).games[i];
+                        var home = game.home.name;
+                        var away = game.away.name;
+                        if (home === favteam || away === favteam) {
+                            var utcDate = JSON.parse(body).games[i].scheduled;
+                            var localDate = new Date(utcDate).toString().replace(/GMT.*/g,"");
+                            console.log(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
+                        }
+                    }
+                }          
+                else{
+                    console.log("ERROR!");
+                }
+            });  
+            setTimeout(nbaSchedule7, 1750);   
+        }
+        
+        function nbaSchedule7(){
+            var today = new Date();
+            var mm = today.getMonth()+1;
+            var yyyy = today.getFullYear();
+        
+            if(mm<10) {
+                mm = '0'+mm
+            } 
+            var dd7 = today.getDate() + 7;
+            if(dd7<10) {
+                dd7 = '0'+dd7;
+            }    
+            var queryUrl = "https://api.sportradar.us/nba/trial/v4/en/games/2018/"+mm+"/"+dd7+"/"+"schedule.json?api_key=6pjpbc2mehgjcrdzfvnafmwn";  
+            request(queryUrl, function(error, response, body) {   
+                if (!error && response.statusCode === 200) {
+                    for (i = 0; i < JSON.parse(body).games.length; i++) {
+                        var game = JSON.parse(body).games[i];
+                        var home = game.home.name;
+                        var away = game.away.name;
+                        if (home === favteam || away === favteam) {
+                            var utcDate = JSON.parse(body).games[i].scheduled;
+                            var localDate = new Date(utcDate).toString().replace(/GMT.*/g,"");
+                            console.log(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
 
+                        }
+                    }
+                }          
+                else{
+                    console.log("ERROR!");
+                }
+            }); 
+             
+        }
+    
+    nbaSchedule1();
+    
+    });
+  }  
 });
 
 router.get('/todaysGames', function(req, res) {

@@ -71,13 +71,20 @@ h1{
 /*  Team Schedule =======================  */
 .teamSchedule{
 	height:80px;
-	background-color: #eee
+	background-color: #eee;
+	margin-bottom:20px;
+	padding:10px;
+}
+
+#input_message{
+	margin-bottom:10px;
 }
 
 .message{
 	font-size:13px;
 	padding:5px;
-	background-color: #eee
+	background-color: #eee;
+	border-radius: 6px;
 }
 
 .calendar-icon{
