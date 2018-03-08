@@ -4,17 +4,9 @@
 		<li class="nav-item userTitle"><a href="" class="nav-link">Hi {{fan.name}}</a></li>
 		<li class="nav-item">
 			<a class="nav-link" id="title" href="/auth/logout">Logout</a>
-		</li>
-	
-		
+		</li>	
 		<li class="nav-item">
 			<a class="nav-link" id="title" href="/">Homepage</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" id="title" href="/profile">ProfilePage</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" id="title" href="/events">Events</a>
 		</li>
 	</ul>
 </nav>
@@ -112,9 +104,9 @@
 		</main>
 		<div class="col-md-2 d-none d-md-block bg-light sidebar">
 			<h4>Messages</h4>
-			{{#if text}}
+			{{#each message}}
 				<p>{{text}}</p>
-			{{/if}}
+			{{/each}}
 			<form id="message">
 				<label>Enter Message</label>
 				<input type="text" id="input_message">

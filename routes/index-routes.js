@@ -31,20 +31,22 @@ router.get("/", authCheck, function(req, res) {
     //If the Fan is in the database
     if (dbFan) {
       db.Event.findAll({}).then(function(event){
-        console.log(dbFan.dataValues)
+        db.Message.findAll({}).then(function(message){
+
         var newObject = {
            newEvent: event,
-           fan: dbFan.dataValues
+           fan: dbFan.dataValues,
+           message: message
         };
-        // console.log('testdlksldjfa;s', newObject.newEvent);
-        // res.render('events', newObject);
+      
         res.render("index", newObject);
-        })
-    } else {
+      });
+    });
+        } else {
       //otherwise they must signup
       return res.redirect('/auth/signup');
-    }
+        }
+    });
   });
-});
 
 module.exports = router;
