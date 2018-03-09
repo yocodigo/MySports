@@ -65,7 +65,17 @@ h1{
 
 #venues, #placeholder {
 	margin: 5px 0px 0px 5px;
+}
 
+.loc{
+	color:#666;
+}
+
+.rating{
+	border-bottom: 1px solid #eee;
+    display: block;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 /*  Team Schedule =======================  */
