@@ -31,13 +31,13 @@ html, body {
     height: auto !important;
     height: 100%;
     width: 100%;
+    margin: auto;
     background-image: url("http://www.kinyu-z.net/data/wallpapers/236/1531673.jpg");
 }
 
-/*.loginContent{
-	width: 100%;
-	background-image: url("http://www.kinyu-z.net/data/wallpapers/236/1531673.jpg");
-}*/
+.teamBanner .row{
+	height: 20px;
+}
 
 #GoogleButton a{
 	color: white;
