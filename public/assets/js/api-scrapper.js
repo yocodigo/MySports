@@ -4,12 +4,12 @@ $.ajax({
     url: '/fan/twitter',
     method: 'GET'
   }).done(function(response) {
-    // console.log(response);
+    console.log(response);
     for (var i = 0; i < response.length; i++) {
       $('#twitterMessages').append('<p>' + response[i].text + '</p>');
     }
-  })
-  // }
+  });
+
 function getTodaysGames() {
   $.ajax({
     url: '/fan/todaysGames',
@@ -30,5 +30,17 @@ function getColors() {
   }).done(function(team) {
     $('.teamBanner').css('background-color', team.color1);
     $('.teamBanner').css('border-bottom', '20px solid ' + team.color2);
+  });
+}
+
+// Gets the game schedule for the user's favorite team
+function getTeamGames() {
+  console.log("This is from the getTeamGames function in api-scrapper.js");
+  $.ajax({
+    url: '/fan/teamGames',
+    method: 'GET'
+  }).done(function(response) {
+    // console.log (response);
+      $("#teamGames").append(response);
   });
 }
