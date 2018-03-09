@@ -41,7 +41,7 @@ $.ajax({
   response.forEach(function(game) {
     var newDiv = $("<div>");
     //var newImg = $("<img>"); 
-    newDiv.append("<p><span><img src='http://www.opnlttr.com/sites/default/files/448650-basketball_mario_sports_mix_.png' style='width:20px'>" + game + "</span></p>");
+    newDiv.append("<p><span><img src='http://www.opnlttr.com/sites/default/files/448650-basketball_mario_sports_mix_.png' style='width:20px; margin-right:10px'>" + game + "</span></p>");
     $("#NBAGames").append(newDiv);
   })
 });
