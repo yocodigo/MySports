@@ -69,9 +69,11 @@ router.get('/twitter', function(req, res) {
 });
 
 router.get('/teamGames', function(req, res) {
-  if (req.user) {
+    var gameArray = [];
+    if (req.user) {
     helperFunctions.findUser(req.user.id, function(fan) {
       var favteam = fan.team;
+      
       function nbaSchedule1(){
         var today = new Date();
         var mm = today.getMonth()+1;
@@ -98,7 +100,9 @@ router.get('/teamGames', function(req, res) {
                         var localDate = new Date(utcDate).toString().replace(/GMT.*/g,"");
                         console.log(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
                         // $('#schedule').append(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
+                        gameArray.push(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);    
                     }
+
                 }
             }          
             else{
@@ -107,7 +111,7 @@ router.get('/teamGames', function(req, res) {
         });  
         setTimeout(nbaSchedule2, 1750);
       }
-    
+      
         function nbaSchedule2(){
             var today = new Date();
             var mm = today.getMonth()+1;
@@ -132,8 +136,10 @@ router.get('/teamGames', function(req, res) {
                             var utcDate = JSON.parse(body).games[i].scheduled;
                             var localDate = new Date(utcDate).toString().replace(/GMT.*/g,"");
                             console.log(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
+                            gameArray.push(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);        
                         }
                     }
+                    
                 }          
                 else{
                     console.log("ERROR!");
@@ -166,6 +172,7 @@ router.get('/teamGames', function(req, res) {
                             var utcDate = JSON.parse(body).games[i].scheduled;
                             var localDate = new Date(utcDate).toString().replace(/GMT.*/g,"");
                             console.log(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
+                            gameArray.push(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);        
                         }
                     }
                 }          
@@ -200,6 +207,7 @@ router.get('/teamGames', function(req, res) {
                             var utcDate = JSON.parse(body).games[i].scheduled;
                             var localDate = new Date(utcDate).toString().replace(/GMT.*/g,"");
                             console.log(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
+                            gameArray.push(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);        
                         }
                     }
                 }          
@@ -234,6 +242,7 @@ router.get('/teamGames', function(req, res) {
                             var utcDate = JSON.parse(body).games[i].scheduled;
                             var localDate = new Date(utcDate).toString().replace(/GMT.*/g,"");
                             console.log(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
+                            gameArray.push(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
                         }
                     }
                 }          
@@ -267,6 +276,7 @@ router.get('/teamGames', function(req, res) {
                             var utcDate = JSON.parse(body).games[i].scheduled;
                             var localDate = new Date(utcDate).toString().replace(/GMT.*/g,"");
                             console.log(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
+                            gameArray.push(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);        
                         }
                     }
                 }          
@@ -300,21 +310,20 @@ router.get('/teamGames', function(req, res) {
                             var utcDate = JSON.parse(body).games[i].scheduled;
                             var localDate = new Date(utcDate).toString().replace(/GMT.*/g,"");
                             console.log(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);
-
+                            gameArray.push(JSON.parse(body).games[i].away.alias + " at " + JSON.parse(body).games[i].home.alias + " | " + localDate);                        
                         }
                     }
+                    console.log(gameArray);
+                    res.json(gameArray);
                 }          
                 else{
                     console.log("ERROR!");
                 }
-            }); 
-             
+            });  
         }
-    
-    nbaSchedule1();
-    
+    nbaSchedule1();         
     });
-  }  
+  } 
 });
 
 router.get('/todaysGames', function(req, res) {
