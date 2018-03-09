@@ -30,8 +30,14 @@ html, body {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    /*margin: 0 auto -20px;*/
+    width: 100%;
+    background-image: url("http://www.kinyu-z.net/data/wallpapers/236/1531673.jpg");
 }
+
+/*.loginContent{
+	width: 100%;
+	background-image: url("http://www.kinyu-z.net/data/wallpapers/236/1531673.jpg");
+}*/
 
 #GoogleButton a{
 	color: white;
@@ -53,13 +59,6 @@ html, body {
 	width: 100%;
 	color: white;
 }
-/*
-
-#GoogleButton{
-	background-color: blue;
-	color: white;
-	margin-left: 45%;
-}*/
 
 h1{
 	text-align: center;
@@ -105,7 +104,17 @@ h1{
 
 #venues, #placeholder {
 	margin: 5px 0px 0px 5px;
+}
 
+.loc{
+	color:#666;
+}
+
+.rating{
+	border-bottom: 1px solid #eee;
+    display: block;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 /*  Team Schedule =======================  */
@@ -141,4 +150,19 @@ h1{
 .loginContent{
 	width: 100%;
 	background-image: url("http://www.kinyu-z.net/data/wallpapers/236/1531673.jpg");
+}
+
+.signup-card{
+	width:350px;
+	margin:0 auto;
+	padding:20px;
+	-webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  	-moz-box-shadow:    3px 3px 5px 6px rgba(0, 0, 0, 0.4);   /* Firefox 3.5 - 3.6 */
+  	box-shadow:         3px 3px 5px 6px rgba(0, 0, 0, 0.4); 
+}
+
+.signup-page{
+	background-image: url('../images/Basketball.png');
+	padding-top:50px;
+	height:800px;
 }
