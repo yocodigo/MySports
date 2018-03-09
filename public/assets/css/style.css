@@ -1,3 +1,43 @@
+
+html, body {
+    height: 100%;
+}
+
+#loginTitle{
+	color: white;
+	font-family: 'Berkshire Swash', cursive;
+}
+
+
+#GoogleButton{
+	background-color: #B0483B;
+	color: white;
+	margin-left: 44%;
+	border: 1px solid white;
+	width: 150px;
+	padding-left: 10px;
+}
+
+
+#GoogleButton img{
+	padding-right: 5px;
+	width: 40%;
+	margin-right: 0;
+}
+
+
+.loginContent {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /*margin: 0 auto -20px;*/
+}
+
+#GoogleButton a{
+	color: white;
+}
+
+
 .navbar{
 	background-color: #333
 }
@@ -13,13 +53,13 @@
 	width: 100%;
 	color: white;
 }
-
+/*
 
 #GoogleButton{
 	background-color: blue;
 	color: white;
 	margin-left: 45%;
-}
+}*/
 
 h1{
 	text-align: center;
@@ -96,4 +136,9 @@ h1{
 #twitterMessages p{
 	font-size:13px;
 
+}
+
+.loginContent{
+	width: 100%;
+	background-image: url("http://www.kinyu-z.net/data/wallpapers/236/1531673.jpg");
 }
