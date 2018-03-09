@@ -117,32 +117,38 @@
 	<div class="row">
 		<div class="col-6">
 			<div class="card module">
+				<div class="card-header">
+    Twitter
+  </div>
 			  <div class="card-body">
-			    <h5 class="card-title">Twitter</h5>
+			    {{!-- <h5 class="card-title">Twitter</h5> --}}
 			     <div id="twitterMessages"></div>
 			  </div>
 			</div>
 		</div>
 		<div class="col-3">
 			<div class="card module">
+				<div class="card-header">
+    NBA News
+  </div>
 			  <div class="card-body">
-			    <h5 class="card-title">NBA News</h5>
+			    {{!-- <h5 class="card-title">NBA News</h5> --}}
 			    <div id="NBAGames"></div>
 			  </div>
 			</div>
 		</div>
 	</div>
-	<h2>Events&nbsp;&nbsp;<span><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">+</button></span></h2>
+	<h2>Events<span><button type="button" class="btn btn-primary add-event" data-toggle="modal" data-target="#exampleModal">+</button></span></h2>
 	<div class="row">
 		{{#each newEvent}}
 			<div class="col-3">			
 				<div class="card event">
   					<div class="card-body">
-  					  <h5 class="card-title">Event: {{title}}</h5>
+							<div class="card-header">Event: {{title}}</div>
   					  <p class="card-text">{{description}}</p>
-					  <p>When: {{date}}</p>
-					  <p>Where: {{location}}</p>
-					  <p><span>Who's Going: {{attendees}}</span></p>
+					  	<p>When: {{date}}</p>
+					  	<p>Where: {{location}}</p>
+					  	<p><span>Who's Going: {{attendees}}</span></p>
   					  <a href="#" class="btn btn-primary">I'm Going</a>
   					</div>
 				</div>	
