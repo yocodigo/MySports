@@ -107,3 +107,18 @@ h1{
 	font-size:13px;
 
 }
+
+.signup-card{
+	width:350px;
+	margin:0 auto;
+	padding:20px;
+	-webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  	-moz-box-shadow:    3px 3px 5px 6px rgba(0, 0, 0, 0.4);   /* Firefox 3.5 - 3.6 */
+  	box-shadow:         3px 3px 5px 6px rgba(0, 0, 0, 0.4); 
+}
+
+.signup-page{
+	background-image: url('../images/Basketball.png');
+	padding-top:50px;
+	height:800px;
+}
