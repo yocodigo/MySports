@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+  module.exports = function(sequelize, DataTypes) {
   var Fan = sequelize.define("Fan", {
     name: {
       type: DataTypes.STRING,
