@@ -42,6 +42,8 @@ We used Google+ OAUTH to authorize users into our app.
 they will see their homepage with the newest info.
 
 ## HomePage
+When they are logged in they will see: 
+
 * Colors of NBA team they chose under the nav bar.
 * When a user logs in they see a Google map will feature all the venues in proximity that will be playing the game as
 well the user’s geolocation.
