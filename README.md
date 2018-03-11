@@ -15,7 +15,15 @@ able to generate them places they can visit and content based on their team.
 
 ## To Visit
 * Visit : __https://stormy-spire-61276.herokuapp.com/auth/login__ To see Heroku Deployed app.
-* Visit : __https://github.com/psharif/burger__ to see GitHub Repo
+* Visit : __https://github.com/yocodigo/MySports__ to see GitHub Repo.
+* See Our presentation on Google Slides at: __https://github.com/yocodigo/MySports__
+
+## Contributors
+* Jason Kunkel 
+* Joel Hernandez
+* Pedram Sharif     LinkedIn: https://www.linkedin.com/in/pedram-sharif-6551b9143/
+* Abdel Rahman 
+* Ryan Brownlow
 
 ## Technologies Used
 * __Javascript__ The Language used for the app.
