@@ -7,7 +7,7 @@ live events featuring their favorite teams at various sporting venues.
    This user friendly application allows users like-minded fans together at a central location instead of going to
 multiple websites to find out about news relating to their favorite team.
 
-  When going to the website __https://stormy-spire-61276.herokuapp.com/auth/login__ each user will be
+  When going to the website __https://stormy-spire-61276.herokuapp.com/__ each user will be
 issued an individual login through Google OAUTH to their personalised account.
 
    All user data will be stored in a SQL database. They can enter the NBA team the like, city they live, and the app will be
