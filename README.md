@@ -22,6 +22,7 @@ able to generate them places they can visit and content based on their team.
 * Jason Kunkel 
 
 * Joel Hernandez
+LinkedIn: https://www.linkedin.com/in/joel-hernandez-fullstack/
 
 * Pedram Sharif     
 LinkedIn: https://www.linkedin.com/in/pedram-sharif-6551b9143/
