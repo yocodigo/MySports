@@ -16,7 +16,7 @@ able to generate them places they can visit and content based on their team.
 ## To Visit
 * Visit : __https://stormy-spire-61276.herokuapp.com/auth/login__ To see Heroku Deployed app.
 * Visit : __https://github.com/yocodigo/MySports__ to see GitHub Repo.
-* See Our presentation on Google Slides at: __https://github.com/yocodigo/MySports__
+* See Our presentation on Google Slides at: __https://docs.google.com/presentation/d/1bnODenX_TLRCz9Rdx2FX46N5kdNywBTkP969d9WgrTc/edit?usp=sharing__
 
 ## Contributors
 * Jason Kunkel 
