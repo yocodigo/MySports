@@ -21,7 +21,8 @@ able to generate them places they can visit and content based on their team.
 ## Contributors
 * Jason Kunkel 
 * Joel Hernandez
-* Pedram Sharif     LinkedIn: https://www.linkedin.com/in/pedram-sharif-6551b9143/
+* Pedram Sharif     
+LinkedIn: https://www.linkedin.com/in/pedram-sharif-6551b9143/
 * Abdel Rahman 
 * Ryan Brownlow
 
