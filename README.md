@@ -1,7 +1,9 @@
 # MySports
 
+###  A social networking application that is geared towards bringing NBA fans together. 
+
 ## About Our App
-   We have developed a social networking applicatoin that is geared towards bringing NBA fans together to watch
+   We have developed a social networking application that is geared towards bringing NBA fans together to watch
 live events featuring their favorite teams at various sporting venues.
 
    This user friendly application allows users like-minded fans together at a central location instead of going to
