@@ -57,10 +57,10 @@ function callback(results, status) {
     var venues = "";
     for (var i = 0; i < results.length; i++) {
       markers.push(createMarker(results[i]));
-      venues = i + 1 + ". " + results[i].name;
+      venues = results[i].name;
       vicinity = results[i].vicinity;
       rating = results[i].rating;
-      $('#venues').append(venues + "<br>" + "Address: " + vicinity + "<br>" + "Rating: " + rating + "<br>" + "<br>");
+      $('#venues').append("<strong>" + venues + "</strong><br>" + "<span class='loc'>" + vicinity + "</span><br>" + "<span class='rating'>Rating: " + rating + "</span>");
     }
   }
 }

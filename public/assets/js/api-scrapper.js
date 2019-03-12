@@ -24,23 +24,24 @@ function getTodaysGames() {
   });
 }
 
-function getColors() {
+$(function() {
   $.ajax('/fan/colors', {
     method: 'GET'
   }).done(function(team) {
     $('.teamBanner').css('background-color', team.color1);
     $('.teamBanner').css('border-bottom', '20px solid ' + team.color2);
   });
-}
+});
 
-// Gets the game schedule for the user's favorite team
-function getTeamGames() {
-  console.log("This is from the getTeamGames function in api-scrapper.js");
-  $.ajax({
-    url: '/fan/teamGames',
-    method: 'GET'
-  }).done(function(response) {
-    // console.log (response);
-      $("#teamGames").append(response);
-  });
-}
+$.ajax({
+  url: '/fan/teamGames',
+  method: 'GET'
+}).done(function(response) {
+  console.log (response);
+  response.forEach(function(game) {
+    var newDiv = $("<div>");
+    //var newImg = $("<img>"); 
+    newDiv.append("<p><span><img src='http://www.opnlttr.com/sites/default/files/448650-basketball_mario_sports_mix_.png' style='width:20px; margin-right:10px'>" + game + "</span></p>");
+    $("#NBAGames").append(newDiv);
+  })
+});

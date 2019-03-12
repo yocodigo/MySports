@@ -1,3 +1,49 @@
+
+html, body {
+    height: 100%;
+}
+
+#loginTitle{
+	color: white;
+	font-family: 'Berkshire Swash', cursive;
+}
+
+
+#GoogleButton{
+	background-color: #B0483B;
+	color: white;
+	margin-left: 44%;
+	border: 1px solid white;
+	width: 150px;
+	padding-left: 10px;
+}
+
+
+#GoogleButton img{
+	padding-right: 5px;
+	width: 40%;
+	margin-right: 0;
+}
+
+
+.loginContent {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-image: url("http://www.kinyu-z.net/data/wallpapers/236/1531673.jpg");
+}
+
+.teamBanner .row{
+	height: 50px;
+}
+
+#GoogleButton a{
+	color: white;
+}
+
+
 .navbar{
 	background-color: #333
 }
@@ -12,13 +58,6 @@
 #title {
 	width: 100%;
 	color: white;
-}
-
-
-#GoogleButton{
-	background-color: blue;
-	color: white;
-	margin-left: 45%;
 }
 
 h1{
@@ -45,6 +84,10 @@ h1{
 	padding:10px;	
 	
 }
+.add-event{
+	margin-left:20px
+}
+
 
 .module{
 	height: 300px;
@@ -57,6 +100,10 @@ h1{
 	width: 300px;
 }
 
+.card-header{
+margin-bottom: 20px;
+}
+
 #map {
     height: 400px;
     width: 500px;
@@ -65,7 +112,17 @@ h1{
 
 #venues, #placeholder {
 	margin: 5px 0px 0px 5px;
+}
 
+.loc{
+	color:#666;
+}
+
+.rating{
+	border-bottom: 1px solid #eee;
+    display: block;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 /*  Team Schedule =======================  */
@@ -96,4 +153,24 @@ h1{
 #twitterMessages p{
 	font-size:13px;
 
+}
+
+.loginContent{
+	width: 100%;
+	background-image: url("http://www.kinyu-z.net/data/wallpapers/236/1531673.jpg");
+}
+
+.signup-card{
+	width:350px;
+	margin:0 auto;
+	padding:20px;
+	-webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  	-moz-box-shadow:    3px 3px 5px 6px rgba(0, 0, 0, 0.4);   /* Firefox 3.5 - 3.6 */
+  	box-shadow:         3px 3px 5px 6px rgba(0, 0, 0, 0.4); 
+}
+
+.signup-page{
+	background-image: url('../images/Basketball.png');
+	padding-top:50px;
+	height:800px;
 }
