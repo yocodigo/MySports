@@ -4,8 +4,7 @@ var db = require("../models");
 //MiddleWare to check if the user is logged in or not.
 var authCheck = function(req, res, next) {
   if (!req.user) {
-    //If the user is not logged In 
-    res.redirect('/auth/login');
+    res.redirect('/auth/login'); //If the user is not logged In 
   } else {
     next();
   }
