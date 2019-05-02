@@ -9,7 +9,7 @@ passport.serializeUser(function(googleUser, done){
 });
 
 passport.deserializeUser(function(id, done){
-	db.GoogleUser.findById(id).then(function(googleUser){
+	db.GoogleUser.findByPk(id).then(function(googleUser){
 		done(null, googleUser);
 	});
 });
